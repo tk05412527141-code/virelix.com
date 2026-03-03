@@ -33,8 +33,11 @@ export const Navbar = () => {
                 "container mx-auto flex items-center justify-between transition-all duration-300",
                 isScrolled ? "glass rounded-full px-6 py-2" : "px-0"
             )}>
-                <div className="flex items-center gap-3">
-                    <div className="relative w-14 h-14">
+                <div
+                    className="flex items-center gap-3 cursor-pointer group"
+                    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                >
+                    <div className="relative w-14 h-14 transition-transform duration-300 group-hover:scale-110">
                         <Image
                             src="/logo.png"
                             alt="Virelix Logo"

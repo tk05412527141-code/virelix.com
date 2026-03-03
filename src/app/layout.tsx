@@ -13,10 +13,16 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Virelix | Engineering The Digital Future",
-  description: "We design scalable AI systems, high-performance applications and next-generation digital infrastructure.",
-  keywords: ["AI", "Technology", "Software Engineering", "Digital Infrastructure", "Virelix"],
+  title: "Virelix | Dijital Geleceği İnşa Ediyoruz",
+  description: "Ölçeklenebilir yapay zeka sistemleri, yüksek performanslı uygulamalar ve yeni nesil dijital altyapılar tasarlıyoruz.",
+  keywords: ["Yapay Zeka", "Teknoloji", "Yazılım Mühendisliği", "Dijital Altyapı", "Virelix"],
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
 };
+
 
 export default function RootLayout({
   children,

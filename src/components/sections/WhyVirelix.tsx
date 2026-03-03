@@ -3,11 +3,11 @@ import { Section } from "@/components/ui/Section";
 import { ShieldCheck, Cpu, BarChart3, Lock, Zap } from "lucide-react";
 
 const highlights = [
-    { title: "Scalable Architecture", icon: Cpu },
-    { title: "AI-First Approach", icon: Zap },
-    { title: "Performance-Driven", icon: BarChart3 },
-    { title: "Security by Design", icon: ShieldCheck },
-    { title: "Global Standards", icon: Lock },
+    { title: "Ölçeklenebilir Mimari", icon: Cpu },
+    { title: "Yapay Zeka Odaklı Yaklaşım", icon: Zap },
+    { title: "Performans Odaklı", icon: BarChart3 },
+    { title: "Tasarımdan Gelen Güvenlik", icon: ShieldCheck },
+    { title: "Küresel Standartlar", icon: Lock },
 ];
 
 export const WhyVirelix = () => {
@@ -18,11 +18,11 @@ export const WhyVirelix = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div className="space-y-8">
                     <h2 className="text-4xl md:text-5xl font-bold font-space leading-tight">
-                        Why Visionaries Choose <br />
-                        <span className="text-primary">Virelix.</span>
+                        Vizyonerlerin Tercihi Neden <br />
+                        <span className="text-primary">Virelix?</span>
                     </h2>
                     <p className="text-white/70 text-lg leading-relaxed">
-                        We build intelligent digital ecosystems designed to scale globally. We combine engineering precision with product innovation to ensure your future remains limitless.
+                        Küresel ölçekte büyümek üzere tasarlanmış akıllı dijital ekosistemler inşa ediyoruz. Geleceğinizin sınırsız kalmasını sağlamak için mühendislik hassasiyetini ürün inovasyonuyla birleştiriyoruz.
                     </p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         {highlights.map((item, index) => (
@@ -41,7 +41,7 @@ export const WhyVirelix = () => {
                     <div className="w-48 h-48 bg-primary/20 rounded-full blur-[100px] animate-pulse-slow" />
                     <div className="relative text-center space-y-4">
                         <div className="text-6xl font-black font-space text-gradient">99.9%</div>
-                        <div className="text-white/40 uppercase tracking-[0.2em] text-sm">System Availability</div>
+                        <div className="text-white/40 uppercase tracking-[0.2em] text-sm">Sistem Erişilebilirliği</div>
                     </div>
                 </div>
             </div>

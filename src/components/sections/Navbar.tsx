@@ -6,10 +6,12 @@ import { Button } from "@/components/ui/Button";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+import Image from "next/image";
+
 const links = [
-    { name: "Services", href: "#services" },
-    { name: "Projects", href: "#projects" },
-    { name: "About", href: "#about" },
+    { name: "Hizmetler", href: "#services" },
+    { name: "Projeler", href: "#projects" },
+    { name: "Hakkımızda", href: "#about" },
 ];
 
 export const Navbar = () => {
@@ -31,12 +33,18 @@ export const Navbar = () => {
                 "container mx-auto flex items-center justify-between transition-all duration-300",
                 isScrolled ? "glass rounded-full px-6 py-2" : "px-0"
             )}>
-                <div className="flex items-center gap-2">
-                    <div className="w-10 h-10 rounded-lg bg-primary shadow-glow flex items-center justify-center">
-                        <span className="text-white font-black text-xl italic">V</span>
+                <div className="flex items-center gap-3">
+                    <div className="relative w-14 h-14">
+                        <Image
+                            src="/logo.png"
+                            alt="Virelix Logo"
+                            fill
+                            className="object-contain"
+                        />
                     </div>
                     <span className="text-2xl font-black font-space tracking-tight hidden sm:block">VIRELIX</span>
                 </div>
+
 
                 {/* Desktop Links */}
                 <div className="hidden md:flex items-center gap-8">
@@ -46,7 +54,7 @@ export const Navbar = () => {
                         </a>
                     ))}
                     <Button size="sm" variant="primary" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
-                        Hire Us
+                        Bize Ulaşın
                     </Button>
                 </div>
 
@@ -76,7 +84,7 @@ export const Navbar = () => {
                             </a>
                         ))}
                         <Button className="w-full" variant="primary" onClick={() => setIsMobileMenuOpen(false)}>
-                            Contact Us
+                            İletişime Geçin
                         </Button>
                     </motion.div>
                 )}

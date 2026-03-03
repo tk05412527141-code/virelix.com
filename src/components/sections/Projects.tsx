@@ -5,20 +5,20 @@ import { Section } from "@/components/ui/Section";
 
 const projects = [
     {
-        title: "Axon Neural Engine",
-        description: "Self-scaling AI infrastructure processing 1M+ tokens per second.",
+        title: "Axon Sinirsel Motor",
+        description: "Saniyede 1 milyondan fazla token işleyen, kendi kendini ölçeklendiren yapay zeka altyapısı.",
         stack: ["Node", "TensorFlow", "Kubernetes"],
         image: "bg-gradient-to-br from-purple-500/20 to-blue-500/20",
     },
     {
-        title: "Virelix Mobile",
-        description: "The global standard for secure, cross-border financial transactions.",
+        title: "Virelix Mobil",
+        description: "Güvenli ve sınır ötesi finansal işlemler için küresel standart.",
         stack: ["Flutter", "Firebase", "Rust"],
         image: "bg-gradient-to-br from-indigo-500/20 to-teal-500/20",
     },
     {
-        title: "Quantum Ledger",
-        description: "High-performance data integrity for distributed systems.",
+        title: "Quantum Defter",
+        description: "Dağıtık sistemler için yüksek performanslı veri bütünlüğü.",
         stack: ["Go", "AWS", "AI"],
         image: "bg-gradient-to-br from-pink-500/20 to-orange-500/20",
     },
@@ -29,8 +29,8 @@ export const Projects = () => {
         <Section id="projects" className="bg-white/[0.02]">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
                 <div className="space-y-4">
-                    <h2 className="text-4xl md:text-5xl font-bold font-space">Featured Projects</h2>
-                    <p className="text-white/60 max-w-xl">Deep engineering meets breakthrough innovation.</p>
+                    <h2 className="text-4xl md:text-5xl font-bold font-space">Öne Çıkan Projeler</h2>
+                    <p className="text-white/60 max-w-xl">Derin mühendisliğin çığır açan inovasyonla buluştuğu nokta.</p>
                 </div>
             </div>
 

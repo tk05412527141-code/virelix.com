@@ -19,7 +19,7 @@ export const Hero = () => {
                     transition={{ duration: 0.8 }}
                     className="inline-block px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium mb-4"
                 >
-                    Next-Generation AI Platform
+                    Yeni Nesil Yapay Zeka Platformu
                 </motion.div>
 
                 <motion.h1
@@ -28,8 +28,8 @@ export const Hero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                 >
-                    Engineering The <br />
-                    <span className="text-gradient">Digital Future.</span>
+                    Dijital Geleceği <br />
+                    <span className="text-gradient">İnşa Ediyoruz.</span>
                 </motion.h1>
 
                 <motion.p
@@ -38,7 +38,7 @@ export const Hero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
                 >
-                    We design scalable AI systems, high-performance applications and next-generation digital infrastructure for the visionaries of tomorrow.
+                    Yarının vizyonerleri için ölçeklenebilir yapay zeka sistemleri, yüksek performanslı uygulamalar ve yeni nesil dijital altyapılar tasarlıyoruz.
                 </motion.p>
 
                 <motion.div
@@ -47,8 +47,8 @@ export const Hero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.6 }}
                 >
-                    <Button size="lg" variant="primary">Explore Our Work</Button>
-                    <Button size="lg" variant="outline">Start a Project</Button>
+                    <Button size="lg" variant="primary">Çalışmalarımızı İnceleyin</Button>
+                    <Button size="lg" variant="outline">Proje Başlatın</Button>
                 </motion.div>
             </div>
 

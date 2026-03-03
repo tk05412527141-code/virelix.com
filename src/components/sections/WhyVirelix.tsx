@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { Section } from "@/components/ui/Section";
 import { ShieldCheck, Cpu, BarChart3, Lock, Zap } from "lucide-react";

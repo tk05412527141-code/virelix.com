@@ -1,13 +1,14 @@
-"use client";
-
+import dynamic from "next/dynamic";
 import { Navbar } from "@/components/sections/Navbar";
 import { Hero } from "@/components/sections/Hero";
-import { Services } from "@/components/sections/Services";
-import { Projects } from "@/components/sections/Projects";
-import { WhyVirelix } from "@/components/sections/WhyVirelix";
-import { About } from "@/components/sections/About";
-import { Contact } from "@/components/sections/Contact";
-import { Footer } from "@/components/sections/Footer";
+
+// Dynamic imports for below-the-fold components to improve initial load speed
+const Services = dynamic(() => import("@/components/sections/Services").then(mod => mod.Services));
+const Projects = dynamic(() => import("@/components/sections/Projects").then(mod => mod.Projects));
+const WhyVirelix = dynamic(() => import("@/components/sections/WhyVirelix").then(mod => mod.WhyVirelix));
+const About = dynamic(() => import("@/components/sections/About").then(mod => mod.About));
+const Contact = dynamic(() => import("@/components/sections/Contact").then(mod => mod.Contact));
+const Footer = dynamic(() => import("@/components/sections/Footer").then(mod => mod.Footer));
 
 export default function Home() {
   return (

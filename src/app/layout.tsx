@@ -27,17 +27,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <head>
+      <body
+        className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased bg-background text-foreground`}
+      >
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1994161303501115"
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
-      </head>
-      <body
-        className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased bg-background text-foreground`}
-      >
         {children}
       </body>
     </html>

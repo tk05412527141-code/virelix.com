@@ -8,11 +8,11 @@ export const Hero = () => {
         <section className="relative min-h-screen flex items-center pt-24 overflow-hidden bg-surface">
             {/* Background Image & Overlays */}
             <div className="absolute inset-0 z-0">
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-surface/80 to-surface z-10"></div>
-                <div className="relative w-full h-full opacity-40 mix-blend-screen">
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-surface to-surface z-10"></div>
+                <div className="relative w-full h-full opacity-40 mix-blend-screen bg-no-repeat bg-cover">
                     <Image 
                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_RRs8FhVqhjvLSJWIUSCsgyEoUr66zkDFBMuT2gIhLzs9e8KgE0J-riv7atzwgfpNlCwreq50l3OTKjFUL1Vch8oUVbj9qZzqMiL7kvw3kL88yYYA2E9hQdPSe956BxNOFT4SzcNS3jxhGpfSn2KNMepNAnlGqmlgNUeHK3zUcbksztkFuxmEzbCTlqQequre6N_KWH0YsAuTzuBxlk2sVGJvOk21l9_4ml3vobwNro6LyfHrFCGwE8iJ0VQFu-uQQD4aTRO6pTA"
-                        alt="Yapay Sinir Ağları Arka Planı"
+                        alt="Abstract neural network"
                         fill
                         priority
                         className="object-cover"

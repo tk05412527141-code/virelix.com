@@ -4,12 +4,12 @@ import Image from 'next/image'
 export const CTA = () => {
   return (
     <section className="py-24 md:py-32 px-6 md:px-12 max-w-[1920px] mx-auto text-center">
-      <div className="relative bg-gradient-to-br from-primary-container to-[#5a00c6] rounded-[3rem] p-12 md:p-24 overflow-hidden border border-white/10 shadow-2xl shadow-primary-container/20">
+      <div className="relative bg-gradient-to-r from-primary-container to-[#5a00c6] rounded-[3rem] p-12 md:p-24 overflow-hidden border border-white/10 shadow-2xl shadow-primary-container/20">
         {/* Background Image/Aura */}
-        <div className="absolute inset-0 opacity-30 pointer-events-none mix-blend-overlay scale-110">
+        <div className="absolute inset-0 opacity-20 pointer-events-none mix-blend-overlay">
           <Image 
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBcXAEtiHo5ZTbZ5ah_iOJSN6ip6nfCLfnUYUWjof5kxIQgWWnz7udZQ9_ahzULD_uGB4Ur6CWh5362iZXlrSXs7WDhnmbj8TehY1UTahrENfDC8TtSTSnHd0Rpwnrj0TqdewCsY-Nn5gnr2cd8gBa-HDccDnrSNJGGf5-24mvtOYErIoP_1zle77NrZ5rzPFr8bnlQN1390CwHC3dSIGhCF3x3olpiEonU4CBg5_NW8AAXmu-sI37omwkgLsau840hmx4OQOb1mQ"
-            alt="Küresel Veri Ağı"
+            alt="Global connectivity network"
             fill
             className="object-cover"
           />

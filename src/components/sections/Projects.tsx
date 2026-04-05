@@ -1,66 +1,78 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { GlassCard } from "@/components/ui/GlassCard";
-import { Section } from "@/components/ui/Section";
 
 const projects = [
     {
-        title: "Axon Sinirsel Motor",
-        description: "Saniyede 1 milyondan fazla token işleyen, kendi kendini ölçeklendiren yapay zeka altyapısı.",
-        stack: ["Node", "TensorFlow", "Kubernetes"],
-        image: "bg-gradient-to-br from-purple-500/20 to-blue-500/20",
+        category: "Finans / Veri Analitiği",
+        title: "FinTech AI Optimizer",
+        description: "Yatırım stratejilerini %40 daha isabetli hale getiren otonom tahminleme sistemi.",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCu6C5AHWPM5UCA1sh7huD-KkMomvtVi11Tb739AUH5VFb2xevwt-JfdbJISF2mX4OEKbltfo_8GmSQISKJc5M1JJ8pJ-p2FfWvQ-mHwPPGKNUiC6A2sZj9FWvnspLmvMCFjQjUUaEymU8lIQe0Ho7m9Fb69NqqeMecMTcfpsCOnDf_nLHB-b4Xg-dATkHagpnZKX30G9I1Gk8bncyTuojPWPDlPrDbYQSsb2oCdsGATZe6hKpUo9fBJF7rcefqATAiva3dDGFmWCE",
     },
     {
-        title: "Virelix Mobil",
-        description: "Güvenli ve sınır ötesi finansal işlemler için küresel standart.",
-        stack: ["Flutter", "Firebase", "Rust"],
-        image: "bg-gradient-to-br from-indigo-500/20 to-teal-500/20",
-    },
-    {
-        title: "Quantum Defter",
-        description: "Dağıtık sistemler için yüksek performanslı veri bütünlüğü.",
-        stack: ["Go", "AWS", "AI"],
-        image: "bg-gradient-to-br from-pink-500/20 to-orange-500/20",
+        category: "Lojistik / Otomasyon",
+        title: "LogiStream 2.0",
+        description: "Tedarik zinciri yönetimini tamamen yapay zeka kontrollü hale getiren entegre çözüm.",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDX9OkvJrQAdEr4awZ1vl3yf6eZG8SY4F_qucS1PM2Mv-VQ8HDOKW8rosmklriBRnIO7n8zPHtA22mP55IKbDiPwBi2pyfLzKslVDWCxELexfmx_SofOoQukLddfh_mgZ3u66mardJbh6uCJ5X7cvJpaN_NLU7XN3LT8znOC8WmGC9YHp0n043y8VOGRnRrOKlTaKZjf7kxLnuaEmZomeQ_G7zRp6ZXFsbjv6VpcmxzPWwqpy-caqk4kbqiwHpPdtRcHj9bpYBbAbA",
     },
 ];
 
 export const Projects = () => {
     return (
-        <Section id="projects" className="bg-white/[0.02]">
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-                <div className="space-y-4">
-                    <h2 className="text-4xl md:text-5xl font-bold font-space">Öne Çıkan Projeler</h2>
-                    <p className="text-white/60 max-w-xl">Derin mühendisliğin çığır açan inovasyonla buluştuğu nokta.</p>
+        <section className="py-24 px-8 bg-transparent relative z-10" id="projects">
+            <div className="max-w-7xl mx-auto">
+                <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                    >
+                        <h2 className="text-4xl md:text-5xl font-headline font-bold text-white mb-6">Başarı Hikayelerimiz</h2>
+                        <p className="text-on-surface-variant max-w-xl text-lg">Küresel ölçekteki markalar için hayata geçirdiğimiz dijital dönüşüm projeleri.</p>
+                    </motion.div>
+                    <motion.button 
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        className="text-primary font-bold flex items-center gap-2 hover:translate-x-2 transition-transform group text-lg"
+                    >
+                        Tüm Projeleri Gör <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </motion.button>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    {projects.map((project, index) => (
+                        <motion.div 
+                            key={index}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.2 }}
+                            className="group cursor-pointer"
+                        >
+                            <div className="aspect-[16/10] rounded-3xl overflow-hidden mb-8 relative border border-white/10 shadow-2xl">
+                                <Image 
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                                    src={project.image}
+                                    alt={project.title}
+                                    fill
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#121027] via-[#121027]/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                                <div className="absolute inset-0 bg-primary-container/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            </div>
+                            <div className="flex justify-between items-start">
+                                <div className="space-y-3">
+                                    <span className="text-primary-container font-bold text-sm uppercase tracking-widest">{project.category}</span>
+                                    <h4 className="text-3xl font-bold text-white font-headline group-hover:text-primary transition-colors">{project.title}</h4>
+                                    <p className="text-on-surface-variant text-lg leading-relaxed">{project.description}</p>
+                                </div>
+                            </div>
+                        </motion.div>
+                    ))}
                 </div>
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {projects.map((project, index) => (
-                    <GlassCard key={index} delay={index * 0.1} className="flex flex-col h-full border-none">
-                        <div className={`aspect-[4/3] rounded-xl mb-6 overflow-hidden ${project.image} border border-white/5 flex items-center justify-center`}>
-                            <div className="w-1/2 h-[70%] border-4 border-white/10 rounded-[30px] relative">
-                                <div className="absolute top-2 left-1/2 -translate-x-1/2 w-1/3 h-1.5 bg-white/20 rounded-full" />
-                                <div className="w-full h-full bg-white/5 flex items-center justify-center text-white/10 font-bold">MOCKUP</div>
-                            </div>
-                        </div>
-                        <div className="flex-1 flex flex-col">
-                            <div className="flex flex-wrap gap-2 mb-4">
-                                {project.stack.map((tech) => (
-                                    <span key={tech} className="px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider rounded-md border border-primary/20 bg-primary/5 text-primary">
-                                        {tech}
-                                    </span>
-                                ))}
-                            </div>
-                            <h3 className="text-2xl font-bold mb-3 font-space">{project.title}</h3>
-                            <p className="text-white/60 text-sm mb-6 leading-relaxed flex-1">
-                                {project.description}
-                            </p>
-                        </div>
-                    </GlassCard>
-                ))}
-            </div>
-        </Section>
+        </section>
     );
 };

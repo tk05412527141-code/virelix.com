@@ -1,88 +1,77 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
-import { cn } from "@/lib/utils";
-
-const links = [
-    { name: "AI Çözümleri", href: "#services" },
-    { name: "Protokol", href: "#protocol" },
-    { name: "Dokümantasyon", href: "#docs" },
-];
+import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
 
 export const Navbar = () => {
-    const [isScrolled, setIsScrolled] = useState(false);
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     useEffect(() => {
-        const handleScroll = () => setIsScrolled(window.scrollY > 20);
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 20);
+        };
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     return (
-        <nav className={cn(
-            "fixed top-0 w-full z-50 transition-all duration-500",
-            isScrolled 
-                ? "bg-[#121027]/80 backdrop-blur-xl py-4 shadow-[0_32px_64px_rgba(12,10,39,0.1)]" 
-                : "bg-transparent py-6 md:py-8"
-        )}>
-            <div className="flex justify-between items-center px-6 md:px-12 max-w-[1920px] mx-auto w-full font-headline">
-                <div 
-                    className="text-2xl font-bold tracking-tighter text-white cursor-pointer"
-                    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                >
+        <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+            scrolled ? "bg-[#121027]/80 backdrop-blur-xl py-3 border-b border-white/5 shadow-lg shadow-black/10" : "bg-transparent py-5 md:py-6"
+        }`}>
+            <div className="flex justify-between items-center w-full px-8 md:px-12 max-w-7xl mx-auto font-headline tracking-tight">
+                <Link href="/" className="text-2xl font-bold tracking-tighter text-white">
                     Virelix
-                </div>
+                </Link>
 
-                {/* Desktop Menu */}
-                <div className="hidden md:flex gap-12 items-center">
-                    {links.map((link) => (
-                        <a 
-                            key={link.name} 
-                            href={link.href}
-                            className="text-on-surface-variant font-medium tracking-tight hover:text-white transition-colors relative group"
-                        >
-                            {link.name}
-                            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-container transition-all group-hover:w-full"></span>
-                        </a>
-                    ))}
+                <div className="hidden md:flex gap-10 items-center">
+                    <Link href="#why-us" className="text-slate-300 font-medium hover:text-white transition-colors text-sm uppercase tracking-wider">
+                        Neden Biz?
+                    </Link>
+                    <Link href="#projects" className="text-slate-300 font-medium hover:text-white transition-colors text-sm uppercase tracking-wider">
+                        Projeler
+                    </Link>
+                    <Link href="#testimonials" className="text-slate-300 font-medium hover:text-white transition-colors text-sm uppercase tracking-wider">
+                        Referanslar
+                    </Link>
+                    <Link href="#contact" className="text-primary-container font-bold border-b-2 border-primary-container pb-0.5 text-sm uppercase tracking-wider">
+                        İletişim
+                    </Link>
                 </div>
 
                 <div className="flex items-center gap-6">
-                    <button className="hidden sm:block bg-primary-container text-on-primary-container px-8 py-2.5 rounded-xl font-bold transition-all hover:brightness-110 hover:scale-105 active:scale-95 shadow-lg shadow-primary-container/20">
-                        Başlat
+                    <button className="hidden sm:block bg-primary-container text-white px-7 py-2.5 rounded-xl font-bold hover:scale-95 duration-200 ease-in-out transition-all shadow-lg shadow-primary-container/20 text-sm">
+                        Hemen Başlayın
                     </button>
                     <button 
-                        className="p-2 text-white hover:bg-white/10 rounded-lg transition-colors"
-                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                        className="md:hidden text-white focus:outline-none"
                     >
-                        {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+                        <span className="material-symbols-outlined text-3xl">
+                            {mobileMenuOpen ? "close" : "menu"}
+                        </span>
                     </button>
                 </div>
             </div>
 
             {/* Mobile Menu Overlay */}
-            <div className={cn(
-                "fixed inset-0 top-[72px] md:top-[88px] bg-[#121027]/95 backdrop-blur-2xl transition-all duration-500 z-40 md:hidden",
-                isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-            )}>
-                <div className="flex flex-col items-center justify-center h-full gap-8 p-6">
-                    {links.map((link) => (
-                        <a 
-                            key={link.name} 
-                            href={link.href}
-                            onClick={() => setIsMobileMenuOpen(false)}
-                            className="text-3xl font-bold text-white hover:text-primary-container transition-colors"
-                        >
-                            {link.name}
-                        </a>
-                    ))}
-                    <button className="w-full bg-primary-container text-on-primary-container py-5 rounded-2xl font-bold text-xl mt-8">
-                        Başlat
-                    </button>
-                </div>
-            </div>
+            <AnimatePresence>
+                {mobileMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        className="absolute top-full left-0 w-full bg-[#121027]/95 backdrop-blur-2xl border-b border-white/5 p-8 flex flex-col gap-6 md:hidden glass-panel"
+                    >
+                        <Link onClick={() => setMobileMenuOpen(false)} href="#why-us" className="text-2xl text-white font-headline font-bold">Neden Biz?</Link>
+                        <Link onClick={() => setMobileMenuOpen(false)} href="#projects" className="text-2xl text-white font-headline font-bold">Projeler</Link>
+                        <Link onClick={() => setMobileMenuOpen(false)} href="#testimonials" className="text-2xl text-white font-headline font-bold">Referanslar</Link>
+                        <Link onClick={() => setMobileMenuOpen(false)} href="#contact" className="text-2xl text-primary font-headline font-bold">İletişim</Link>
+                        <button className="bg-primary-container text-white py-5 rounded-2xl font-bold text-lg mt-4">Hemen Başlayın</button>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </nav>
     );
 };

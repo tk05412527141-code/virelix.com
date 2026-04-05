@@ -1,10 +1,7 @@
 "use client";
 
 import React, { useState, useRef } from "react";
-import { Section } from "@/components/ui/Section";
-import { Input } from "@/components/ui/Input";
-import { Button } from "@/components/ui/Button";
-import { Send, CheckCircle2, AlertCircle } from "lucide-react";
+import { motion } from "framer-motion";
 import { submitContactForm } from "@/app/actions/contact";
 
 export const Contact = () => {
@@ -37,66 +34,103 @@ export const Contact = () => {
             formRef.current?.reset();
         } else {
             setStatus('error');
-            setErrorMessage(result.error || "Bir hata oluştu. Lütfen tabloyu oluşturduğunuzdan emin olun.");
+            setErrorMessage(result.error || "Bir hata oluştu.");
         }
     };
 
     return (
-        <Section id="contact" className="bg-white/[0.01]">
-            <div className="max-w-4xl mx-auto glass rounded-[2rem] p-8 md:p-16 border-white/5">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+        <section className="py-24 px-8 bg-transparent relative z-10" id="contact">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
+                {/* Left Side: Info */}
+                <motion.div
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                >
+                    <h2 className="text-4xl md:text-5xl font-headline font-bold text-white mb-8">Bizimle İletişime Geçin</h2>
+                    <p className="text-on-surface-variant mb-12 text-lg leading-relaxed max-w-lg">
+                        Bir projeniz mi var? Veya sadece yapay zekanın size nasıl yardımcı olabileceğini mi merak ediyorsunuz? Kahve içmeye bekleriz.
+                    </p>
+                    
                     <div className="space-y-8">
-                        <h2 className="text-4xl font-bold font-space">Sıradaki projenizi <br /> başlatalım.</h2>
-                        <p className="text-white/60 leading-relaxed">
-                            Mühendislik mükemmeliyetine ihtiyaç duyan bir vizyonunuz mu var? Formu doldurun, teknik ekibimiz 24 saat içinde size ulaşsın.
-                        </p>
-                        <div className="space-y-4 pt-4">
-                            <div className="flex items-center gap-4">
-                                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center border border-primary/20">
-                                    <span className="text-primary text-xs font-bold">TR</span>
+                        {[
+                            { icon: "mail", title: "E-posta", content: "hello@virelix.ai" },
+                            { icon: "call", title: "Telefon", content: "+90 212 999 00 00" },
+                            { icon: "location_on", title: "Adres", content: "Levent Plaza, No: 123, Kat: 15\nBeşiktaş, İstanbul" },
+                        ].map((item, index) => (
+                            <div key={index} className="flex items-start gap-6 group">
+                                <div className="h-14 w-14 rounded-xl bg-[#1f1d34]/80 flex items-center justify-center text-primary-container shrink-0 border border-white/5 group-hover:scale-110 transition-transform shadow-lg">
+                                    <span className="material-symbols-outlined text-3xl">{item.icon}</span>
                                 </div>
-                                <div>
-                                    <div className="text-sm font-bold">Mühendislik Merkezi</div>
-                                    <div className="text-xs text-white/40">Palo Alto, Kaliforniya</div>
+                                <div className="pt-1">
+                                    <div className="text-white font-bold text-xl font-headline">{item.title}</div>
+                                    <div className="text-on-surface-variant text-lg whitespace-pre-line tracking-wide">{item.content}</div>
                                 </div>
                             </div>
+                        ))}
+                    </div>
+                </motion.div>
+
+                {/* Right Side: Form */}
+                <motion.div
+                    initial={{ opacity: 0, x: 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    className="bg-[#1f1d34]/60 backdrop-blur-xl p-8 md:p-12 rounded-[2.5rem] border border-white/10 shadow-2xl relative overflow-hidden"
+                >
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary-container/10 to-transparent opacity-50"></div>
+                    
+                    {status === 'success' ? (
+                        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center space-y-6 py-12">
+                            <div className="w-20 h-20 bg-primary-container/20 rounded-full flex items-center justify-center mb-4">
+                                <span className="material-symbols-outlined text-primary-container text-5xl">check_circle</span>
+                            </div>
+                            <h3 className="text-3xl font-bold text-white font-headline">Mesaj Alındı!</h3>
+                            <p className="text-on-surface-variant text-lg">En kısa sürede sizinle iletişime geçeceğiz.</p>
+                            <button 
+                                onClick={() => setStatus('idle')}
+                                className="bg-primary-container text-white px-8 py-3 rounded-xl font-bold"
+                            >
+                                Yeni Mesaj Gönder
+                            </button>
                         </div>
-                    </div>
-
-                    <div className="relative">
-                        {status === 'success' ? (
-                            <div className="h-full flex flex-col items-center justify-center text-center space-y-4 py-12">
-                                <CheckCircle2 className="text-primary w-16 h-16 animate-bounce" />
-                                <h3 className="text-2xl font-bold font-space">Talep Alındı!</h3>
-                                <p className="text-white/60">Mesajınız başarıyla veritabanına kaydedildi. Sizinle en kısa sürede iletişime geçeceğiz.</p>
-                                <Button variant="outline" onClick={() => setStatus('idle')}>Yeni Form Gönder</Button>
+                    ) : (
+                        <form ref={formRef} className="relative z-10 space-y-6" onSubmit={handleSubmit}>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div className="space-y-2">
+                                    <label className="block text-sm font-bold text-slate-400 uppercase tracking-widest pl-1">Ad Soyad</label>
+                                    <input name="name" className="w-full bg-[#0d0b22]/50 border border-white/5 rounded-2xl p-4 text-white focus:ring-2 focus:ring-primary-container focus:bg-[#0d0b22]/80 transition-all outline-none" placeholder="Adınız Soyadınız" type="text" required />
+                                </div>
+                                <div className="space-y-2">
+                                    <label className="block text-sm font-bold text-slate-400 uppercase tracking-widest pl-1">E-posta</label>
+                                    <input name="email" className="w-full bg-[#0d0b22]/50 border border-white/5 rounded-2xl p-4 text-white focus:ring-2 focus:ring-primary-container focus:bg-[#0d0b22]/80 transition-all outline-none" placeholder="E-posta Adresiniz" type="email" required />
+                                </div>
                             </div>
-                        ) : (
-                            <form ref={formRef} className="space-y-6" onSubmit={handleSubmit}>
-                                <Input label="Adınız" name="name" placeholder="Ahmet Yılmaz" required />
-                                <Input label="İş E-postanız" name="email" placeholder="ahmet@sirket.com" type="email" required />
-                                <Input label="Vizyonunuz" name="vision" placeholder="Bize projenizden bahsedin..." isTextArea required />
+                            <div className="space-y-2">
+                                <label className="block text-sm font-bold text-slate-400 uppercase tracking-widest pl-1">Vizyonunuz</label>
+                                <textarea name="vision" className="w-full bg-[#0d0b22]/50 border border-white/5 rounded-2xl p-4 text-white focus:ring-2 focus:ring-primary-container focus:bg-[#0d0b22]/80 transition-all outline-none resize-none" placeholder="Bize nasıl yardımcı olabiliriz?" rows={5} required></textarea>
+                            </div>
+                            
+                            {status === 'error' && (
+                                <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-xl text-red-500 text-sm flex items-center gap-2">
+                                    <span className="material-symbols-outlined">error</span>
+                                    {errorMessage}
+                                </div>
+                            )}
 
-                                {status === 'error' && (
-                                    <div className="flex items-center gap-2 text-red-500 text-sm bg-red-500/10 p-3 rounded-lg border border-red-500/20">
-                                        <AlertCircle size={16} />
-                                        <span>{errorMessage}</span>
-                                    </div>
-                                )}
-
-                                <Button
-                                    className="w-full gap-2"
-                                    variant="primary"
-                                    disabled={status === 'loading'}
-                                >
-                                    {status === 'loading' ? "Gönderiliyor..." : "Talebi Gönder"}
-                                    {status !== 'loading' && <Send size={16} />}
-                                </Button>
-                            </form>
-                        )}
-                    </div>
-                </div>
+                            <button 
+                                disabled={status === 'loading'}
+                                className="w-full bg-primary-container hover:scale-[1.02] text-white py-5 rounded-2xl font-bold transition-all text-xl shadow-xl shadow-primary-container/20 group disabled:opacity-50"
+                            >
+                                <span className="flex items-center justify-center gap-2">
+                                    {status === 'loading' ? "Gönderiliyor..." : "Mesajı Gönder"}
+                                    <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">send</span>
+                                </span>
+                            </button>
+                        </form>
+                    )}
+                </motion.div>
             </div>
-        </Section>
+        </section>
     );
 };

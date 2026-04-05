@@ -2,11 +2,11 @@
 
 import { Navbar } from "@/components/sections/Navbar";
 import { Hero } from "@/components/sections/Hero";
-import { Stats } from "@/components/sections/Stats";
-import { Services } from "@/components/sections/Services";
-import { Architecture } from "@/components/sections/Architecture";
-import { Protocol } from "@/components/sections/Protocol";
+import { WhyVirelix } from "@/components/sections/WhyVirelix";
+import { Projects } from "@/components/sections/Projects";
+import { Testimonials } from "@/components/sections/Testimonials";
 import { CTA } from "@/components/sections/CTA";
+import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/sections/Footer";
 
 export default function Home() {
@@ -15,13 +15,11 @@ export default function Home() {
       <Navbar />
       <article>
         <Hero />
-        <Stats />
-        <Services />
-        <Architecture />
-        <section id="protocol">
-          <Protocol />
-        </section>
+        <WhyVirelix />
+        <Projects />
+        <Testimonials />
         <CTA />
+        <Contact />
       </article>
       <Footer />
     </main>

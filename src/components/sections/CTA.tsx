@@ -1,20 +1,10 @@
 'use client'
-import Image from 'next/image'
 
 export const CTA = () => {
   return (
     <section className="py-24 md:py-32 px-6 md:px-12 max-w-[1920px] mx-auto text-center">
-      <div className="relative bg-gradient-to-r from-primary-container to-[#5a00c6] rounded-[3rem] p-12 md:p-24 overflow-hidden border border-white/10 shadow-2xl shadow-primary-container/20">
-        {/* Background Image/Aura */}
-        <div className="absolute inset-0 opacity-20 pointer-events-none mix-blend-overlay">
-          <Image 
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBcXAEtiHo5ZTbZ5ah_iOJSN6ip6nfCLfnUYUWjof5kxIQgWWnz7udZQ9_ahzULD_uGB4Ur6CWh5362iZXlrSXs7WDhnmbj8TehY1UTahrENfDC8TtSTSnHd0Rpwnrj0TqdewCsY-Nn5gnr2cd8gBa-HDccDnrSNJGGf5-24mvtOYErIoP_1zle77NrZ5rzPFr8bnlQN1390CwHC3dSIGhCF3x3olpiEonU4CBg5_NW8AAXmu-sI37omwkgLsau840hmx4OQOb1mQ"
-            alt="Global connectivity network"
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#121027]/40 to-transparent"></div>
+      <div className="relative glass-panel rounded-[3rem] p-12 md:p-24 overflow-hidden border border-white/10 shadow-2xl glow-violet">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-container/20 to-transparent opacity-50"></div>
         
         <div className="relative z-10 space-y-8">
           <h2 className="font-headline text-5xl md:text-7xl font-bold text-white mb-8 tracking-tighter leading-none">

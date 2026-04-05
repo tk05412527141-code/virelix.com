@@ -1,23 +1,19 @@
 'use client'
-import Image from 'next/image'
 
 export const Architecture = () => {
   return (
-    <section className="py-24 md:py-32 bg-surface-container-low overflow-hidden">
+    <section className="py-24 md:py-32 overflow-hidden bg-transparent">
       <div className="px-6 md:px-12 max-w-[1920px] mx-auto grid grid-cols-12 gap-12 lg:gap-16 items-center">
-        <div className="col-span-12 lg:col-span-6 relative">
-          <div className="aspect-square rounded-full border border-primary-container/20 absolute -inset-10 md:-inset-20 animate-[pulse_8s_infinite]"></div>
-          <div className="aspect-square rounded-full border border-primary-container/10 absolute -inset-20 md:-inset-40 animate-[pulse_12s_infinite]"></div>
-          <div className="relative bg-surface-container rounded-3xl overflow-hidden shadow-2xl group border border-white/5">
-            <div className="aspect-[4/3] relative">
-              {/* Image will be generated/updated later */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary-container/20 to-transparent"></div>
-              <Image 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdig39TadpSajnq4PRLbzv3sU4tI4vWcgMLCEZh_h4bLG6NW5umU7zRIdgYuOVNctaPbHUOfYGiIxDMW1pCp8cXvvlAX6FRGOxv9VeI1ZsEilTVc3ZPpg7mkx0lELbSoxjK6UFy2ljNwuEHN49TIZPcK3_mukogS9B-WvHhTSRmDndPiqSnry8shvtRCjDuAdxFEwwsEoNii9GxTVNKWHnVzrOu9MwIZjVwvjgxc9UWY4x5vjawHw5P5ShGBoA3hx_bPkqp2VUDyI"
-                alt="Nexus Core Architecture"
-                fill
-                className="w-full h-full object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-700"
-              />
+        <div className="col-span-12 lg:col-span-6">
+          <div className="glass-panel p-8 md:p-12 rounded-[2rem] border border-white/10 glow-violet relative overflow-hidden group">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary-container/10 to-transparent opacity-50"></div>
+            <div className="relative z-10">
+              <span className="material-symbols-outlined text-primary-container text-6xl mb-6">dynamic_form</span>
+              <h3 className="text-4xl font-bold text-white mb-6 font-headline">Nexus Altyapısı</h3>
+              <p className="text-on-surface-variant text-lg leading-relaxed">
+                Nexus, küresel ölçekte dağıtılmış, otonom ve kendi kendini iyileştiren bir mimaridir. 
+                Statik sunucular yerine dinamik sinirsel düğümler üzerinde çalışır.
+              </p>
             </div>
           </div>
         </div>

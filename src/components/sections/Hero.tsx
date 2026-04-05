@@ -49,53 +49,10 @@ export const Hero = () => {
             ref={targetRef}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            className="relative min-h-screen flex items-center pt-24 overflow-hidden bg-surface"
-            style={{ perspective: "1200px" }}
+            className="relative min-h-screen flex items-center pt-24 overflow-hidden"
         >
-            {/* Interactive 3D Background Container */}
-            <motion.div 
-                style={{ 
-                    rotateX, 
-                    rotateY, 
-                    transformStyle: "preserve-3d" 
-                }}
-                className="absolute inset-0 z-0 pointer-events-none"
-            >
-                {/* Background Image with Parallax & Sub-tilt */}
-                <motion.div 
-                    style={{ 
-                        x: translateX, 
-                        y: translateY, 
-                        scale: 1.1,
-                        translateZ: "-50px"
-                    }}
-                    className="absolute inset-0"
-                >
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-surface/40 to-surface z-10"></div>
-                    <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-surface/90 z-10 pointer-events-none"></div>
-                    
-                    <div className="relative w-full h-full opacity-50 mix-blend-screen">
-                        <Image 
-                            src="/virelix-hero-bg.jpg"
-                            alt="Virelix Sinirsel Ağ Arka Planı"
-                            fill
-                            priority
-                            className="object-cover"
-                        />
-                    </div>
-                </motion.div>
-
-                {/* Spotlight Cursor Follower Effect */}
-                <motion.div 
-                    style={{
-                        background: useTransform(
-                            [mouseXSpring, mouseYSpring],
-                            ([latestX, latestY]) => `radial-gradient(800px circle at ${(Number(latestX) + 0.5) * 100}% ${(Number(latestY) + 0.5) * 100}%, rgba(124, 58, 237, 0.15), transparent 80%)`
-                        )
-                    }}
-                    className="absolute inset-0 z-11"
-                />
-            </motion.div>
+            {/* Global Background visibility */}
+            <div className="absolute inset-0 z-0 bg-gradient-to-b from-transparent via-transparent to-surface/20 pointer-events-none"></div>
 
             {/* Content Layer with Individual Depth */}
             <div className="relative z-10 px-6 md:px-12 max-w-[1920px] mx-auto w-full grid grid-cols-12 gap-8 font-headline">
@@ -103,7 +60,6 @@ export const Hero = () => {
                     style={{ 
                         x: contentX, 
                         y: contentY,
-                        translateZ: "50px"
                     }}
                     className="col-span-12 lg:col-span-8"
                 >
@@ -122,7 +78,7 @@ export const Hero = () => {
                             Çekirdeği Başlat 
                             <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">rocket_launch</span>
                         </button>
-                        <button className="px-10 py-5 bg-surface-container-highest text-primary rounded-2xl font-bold text-xl hover:bg-surface-container-high transition-all border border-white/5">
+                        <button className="px-10 py-5 bg-surface-container-highest text-primary rounded-2xl font-bold text-xl hover:bg-surface-container-high transition-all border border-white/5 backdrop-blur-sm">
                             Dokümantasyon
                         </button>
                     </div>

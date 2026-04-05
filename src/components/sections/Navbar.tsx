@@ -41,9 +41,9 @@ export const Navbar = () => {
                 </div>
 
                 <div className="flex items-center gap-6">
-                    <button className="hidden sm:block bg-primary-container text-white px-7 py-2.5 rounded-xl font-bold hover:scale-95 duration-200 ease-in-out transition-all shadow-lg shadow-primary-container/20 text-sm">
+                    <Link href="/consult" className="hidden sm:block bg-primary-container text-white px-7 py-2.5 rounded-xl font-bold hover:scale-95 duration-200 ease-in-out transition-all shadow-lg shadow-primary-container/20 text-sm">
                         Hemen Başlayın
-                    </button>
+                    </Link>
                     <button 
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                         className="md:hidden text-white focus:outline-none"
@@ -64,11 +64,11 @@ export const Navbar = () => {
                         exit={{ opacity: 0, y: -20 }}
                         className="absolute top-full left-0 w-full bg-[#121027]/95 backdrop-blur-2xl border-b border-white/5 p-8 flex flex-col gap-6 md:hidden glass-panel"
                     >
-                        <Link onClick={() => setMobileMenuOpen(false)} href="#why-us" className="text-2xl text-white font-headline font-bold">Neden Biz?</Link>
-                        <Link onClick={() => setMobileMenuOpen(false)} href="#projects" className="text-2xl text-white font-headline font-bold">Projeler</Link>
-                        <Link onClick={() => setMobileMenuOpen(false)} href="#testimonials" className="text-2xl text-white font-headline font-bold">Referanslar</Link>
-                        <Link onClick={() => setMobileMenuOpen(false)} href="#contact" className="text-2xl text-primary font-headline font-bold">İletişim</Link>
-                        <button className="bg-primary-container text-white py-5 rounded-2xl font-bold text-lg mt-4">Hemen Başlayın</button>
+                        <Link onClick={() => setMobileMenuOpen(false)} href="/#why-us" className="text-2xl text-white font-headline font-bold">Neden Biz?</Link>
+                        <Link onClick={() => setMobileMenuOpen(false)} href="/#projects" className="text-2xl text-white font-headline font-bold">Projeler</Link>
+                        <Link onClick={() => setMobileMenuOpen(false)} href="/#testimonials" className="text-2xl text-white font-headline font-bold">Referanslar</Link>
+                        <Link onClick={() => setMobileMenuOpen(false)} href="/#contact" className="text-2xl text-primary font-headline font-bold">İletişim</Link>
+                        <Link href="/consult" className="bg-primary-container text-white py-5 rounded-2xl font-bold text-center text-lg mt-4">Hemen Başlayın</Link>
                     </motion.div>
                 )}
             </AnimatePresence>

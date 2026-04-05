@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export const CTA = () => {
@@ -19,9 +20,9 @@ export const CTA = () => {
           <p className="text-white/80 max-w-2xl mx-auto text-xl mb-10 font-medium">
             İşletmenizin yapay zeka potansiyelini keşfetmek için uzmanlarımızla bir görüşme planlayın.
           </p>
-          <button className="bg-white text-primary-container px-12 py-5 rounded-2xl font-bold text-xl hover:scale-105 transition-transform shadow-2xl active:scale-95 duration-200">
+          <Link href="/consult" className="bg-white text-primary-container px-12 py-5 rounded-2xl inline-block font-bold text-xl hover:scale-105 transition-transform shadow-2xl active:scale-95 duration-200">
             Hemen Ücretsiz Danışmanlık Alın
-          </button>
+          </Link>
         </div>
 
         {/* Abstract patterns */}

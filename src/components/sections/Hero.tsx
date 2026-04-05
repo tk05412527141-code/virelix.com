@@ -2,6 +2,7 @@
 
 import React, { useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
 
 export const Hero = () => {
@@ -59,9 +60,9 @@ export const Hero = () => {
                         Virelix, en karmaşık iş süreçlerinizi akıllı otomasyon ve derin öğrenme algoritmalarıyla optimize eden bir teknoloji ortağıdır.
                     </p>
                     <div className="flex flex-wrap gap-4">
-                        <button className="bg-primary-container hover:scale-105 text-white px-8 py-4 rounded-xl font-bold transition-all shadow-lg shadow-primary-container/20">
+                        <Link href="/consult" className="bg-primary-container hover:scale-105 text-white px-8 py-4 rounded-xl font-bold transition-all shadow-lg shadow-primary-container/20">
                             Ücretsiz Analiz Al
-                        </button>
+                        </Link>
                         <button className="bg-surface-container-highest text-primary px-8 py-4 rounded-xl font-bold hover:bg-surface-variant transition-all border border-white/5 backdrop-blur-md">
                             Çözümlerimizi İncele
                         </button>

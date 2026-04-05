@@ -12,10 +12,10 @@ const projects = [
         image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCu6C5AHWPM5UCA1sh7huD-KkMomvtVi11Tb739AUH5VFb2xevwt-JfdbJISF2mX4OEKbltfo_8GmSQISKJc5M1JJ8pJ-p2FfWvQ-mHwPPGKNUiC6A2sZj9FWvnspLmvMCFjQjUUaEymU8lIQe0Ho7m9Fb69NqqeMecMTcfpsCOnDf_nLHB-b4Xg-dATkHagpnZKX30G9I1Gk8bncyTuojPWPDlPrDbYQSsb2oCdsGATZe6hKpUo9fBJF7rcefqATAiva3dDGFmWCE",
     },
     {
-        category: "Lojistik / Otomasyon",
-        title: "LogiStream 2.0",
-        description: "Tedarik zinciri yönetimini tamamen yapay zeka kontrollü hale getiren entegre çözüm.",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDX9OkvJrQAdEr4awZ1vl3yf6eZG8SY4F_qucS1PM2Mv-VQ8HDOKW8rosmklriBRnIO7n8zPHtA22mP55IKbDiPwBi2pyfLzKslVDWCxELexfmx_SofOoQukLddfh_mgZ3u66mardJbh6uCJ5X7cvJpaN_NLU7XN3LT8znOC8WmGC9YHp0n043y8VOGRnRrOKlTaKZjf7kxLnuaEmZomeQ_G7zRp6ZXFsbjv6VpcmxzPWwqpy-caqk4kbqiwHpPdtRcHj9bpYBbAbA",
+        category: "SaaS / Saha Yönetimi",
+        title: "The Service Editorial",
+        description: "Servis yönetimi ve teknisyen takibini uçtan uca dijitalleştiren kapsamlı mobil platform.",
+        image: "/projects/service-editorial.jpg",
     },
 ];
 

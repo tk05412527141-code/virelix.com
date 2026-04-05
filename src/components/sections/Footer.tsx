@@ -21,16 +21,20 @@ export const Footer = () => {
                     <span className="font-space font-bold">VIRELIX</span>
                 </div>
 
-                <div className="text-white/40 text-sm">
-                    © 2026 Virelix Sistemleri. Mükemmellik için tasarlandı.
-                </div>
-
-                <div className="flex items-center gap-6">
+                <div className="flex justify-center items-center gap-6">
                     {["X", "GitHub", "LinkedIn"].map((social) => (
                         <a key={social} href="#" className="text-white/40 hover:text-primary transition-colors text-sm">
                             {social}
                         </a>
                     ))}
+                </div>
+
+                <div className="flex flex-col items-end gap-2 text-white/40 text-sm">
+                    <p>© 2026 Virelix Sistemleri. Tüm hakları saklıdır.</p>
+                    <div className="flex items-center gap-4">
+                        <a href="/gizlilik-politikasi" className="hover:text-primary transition-colors">Gizlilik Politikası</a>
+                        <a href="/kullanim-kosullari" className="hover:text-primary transition-colors">Kullanım Koşulları</a>
+                    </div>
                 </div>
             </div>
         </footer>

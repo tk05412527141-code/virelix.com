@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   title: "Virelix | Dijital Geleceği İnşa Ediyoruz",
   description: "Ölçeklenebilir yapay zeka sistemleri, yüksek performanslı uygulamalar ve yeni nesil dijital altyapılar tasarlıyoruz.",
   keywords: ["Yapay Zeka", "Teknoloji", "Yazılım Mühendisliği", "Dijital Altyapı", "Virelix"],
+  other: {
+    "google-adsense-account": "ca-pub-1994161303501115",
+  },
 };
 
 
@@ -28,12 +31,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
-        <meta name="google-adsense-account" content="ca-pub-1994161303501115" />
-        <script
+        <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1994161303501115"
           crossOrigin="anonymous"
-        ></script>
+          strategy="afterInteractive"
+        />
       </head>
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased bg-background text-foreground`}

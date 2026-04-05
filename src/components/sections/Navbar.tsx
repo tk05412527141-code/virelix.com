@@ -26,16 +26,16 @@ export const Navbar = () => {
                 </Link>
 
                 <div className="hidden md:flex gap-10 items-center">
-                    <Link href="#why-us" className="text-slate-300 font-medium hover:text-white transition-colors text-sm uppercase tracking-wider">
+                    <Link href="/why-us" className="text-slate-300 font-medium hover:text-white transition-colors text-sm uppercase tracking-wider">
                         Neden Biz?
                     </Link>
-                    <Link href="#projects" className="text-slate-300 font-medium hover:text-white transition-colors text-sm uppercase tracking-wider">
+                    <Link href="/#projects" className="text-slate-300 font-medium hover:text-white transition-colors text-sm uppercase tracking-wider">
                         Projeler
                     </Link>
-                    <Link href="#testimonials" className="text-slate-300 font-medium hover:text-white transition-colors text-sm uppercase tracking-wider">
+                    <Link href="/#testimonials" className="text-slate-300 font-medium hover:text-white transition-colors text-sm uppercase tracking-wider">
                         Referanslar
                     </Link>
-                    <Link href="#contact" className="text-primary-container font-bold border-b-2 border-primary-container pb-0.5 text-sm uppercase tracking-wider">
+                    <Link href="/consult" className="text-primary-container font-bold border-b-2 border-primary-container pb-0.5 text-sm uppercase tracking-wider">
                         İletişim
                     </Link>
                 </div>

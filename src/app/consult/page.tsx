@@ -27,15 +27,15 @@ export default function ConsultPage() {
                 animate={{ y: 0 }}
                 className="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] z-50 bg-[#1F1D34]/70 backdrop-blur-2xl rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 flex justify-around items-center p-2"
             >
-                <Link href="/" className="flex flex-col items-center justify-center text-slate-400 py-3 px-4 hover:bg-white/5 transition-all active:scale-95 duration-200">
+                <Link href="/why-us" className="flex flex-col items-center justify-center text-slate-400 py-3 px-4 hover:bg-white/5 transition-all active:scale-95 duration-200">
                     <span className="material-symbols-outlined text-2xl">insights</span>
                     <span className="text-[10px] uppercase font-bold tracking-widest mt-1">Vision</span>
                 </Link>
-                <Link href="/" className="flex flex-col items-center justify-center text-slate-400 py-3 px-4 hover:bg-white/5 transition-all active:scale-95 duration-200">
+                <Link href="/#projects" className="flex flex-col items-center justify-center text-slate-400 py-3 px-4 hover:bg-white/5 transition-all active:scale-95 duration-200">
                     <span className="material-symbols-outlined text-2xl">psychology</span>
-                    <span className="text-[10px] uppercase font-bold tracking-widest mt-1">AI Solutions</span>
+                    <span className="text-[10px] uppercase font-bold tracking-widest mt-1">Projects</span>
                 </Link>
-                <Link href="/" className="flex flex-col items-center justify-center text-slate-400 py-3 px-4 hover:bg-white/5 transition-all active:scale-95 duration-200">
+                <Link href="/#testimonials" className="flex flex-col items-center justify-center text-slate-400 py-3 px-4 hover:bg-white/5 transition-all active:scale-95 duration-200">
                     <span className="material-symbols-outlined text-2xl">hub</span>
                     <span className="text-[10px] uppercase font-bold tracking-widest mt-1">Network</span>
                 </Link>

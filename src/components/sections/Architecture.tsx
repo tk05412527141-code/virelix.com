@@ -13,7 +13,7 @@ export const Architecture = () => {
               {/* Image will be generated/updated later */}
               <div className="absolute inset-0 bg-gradient-to-tr from-primary-container/20 to-transparent"></div>
               <Image 
-                src="/nexus-core.webp" // Placeholder, will generate this
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdig39TadpSajnq4PRLbzv3sU4tI4vWcgMLCEZh_h4bLG6NW5umU7zRIdgYuOVNctaPbHUOfYGiIxDMW1pCp8cXvvlAX6FRGOxv9VeI1ZsEilTVc3ZPpg7mkx0lELbSoxjK6UFy2ljNwuEHN49TIZPcK3_mukogS9B-WvHhTSRmDndPiqSnry8shvtRCjDuAdxFEwwsEoNii9GxTVNKWHnVzrOu9MwIZjVwvjgxc9UWY4x5vjawHw5P5ShGBoA3hx_bPkqp2VUDyI"
                 alt="Nexus Çekirdek Mimarisi"
                 fill
                 className="object-cover mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-700 scale-105 group-hover:scale-100"

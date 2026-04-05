@@ -1,29 +1,28 @@
-import dynamic from "next/dynamic";
+"use client";
+
 import { Navbar } from "@/components/sections/Navbar";
 import { Hero } from "@/components/sections/Hero";
-
-// Dynamic imports for below-the-fold components to improve initial load speed
-const Services = dynamic(() => import("@/components/sections/Services").then(mod => mod.Services));
-const Projects = dynamic(() => import("@/components/sections/Projects").then(mod => mod.Projects));
-const WhyVirelix = dynamic(() => import("@/components/sections/WhyVirelix").then(mod => mod.WhyVirelix));
-const About = dynamic(() => import("@/components/sections/About").then(mod => mod.About));
-const Contact = dynamic(() => import("@/components/sections/Contact").then(mod => mod.Contact));
-const Footer = dynamic(() => import("@/components/sections/Footer").then(mod => mod.Footer));
+import { Stats } from "@/components/sections/Stats";
+import { Services } from "@/components/sections/Services";
+import { Architecture } from "@/components/sections/Architecture";
+import { Protocol } from "@/components/sections/Protocol";
+import { CTA } from "@/components/sections/CTA";
+import { Footer } from "@/components/sections/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen selection:bg-primary/30">
+    <main className="min-h-screen selection:bg-primary-container/30">
       <Navbar />
-      <Hero />
-      <div className="relative">
+      <article>
+        <Hero />
+        <Stats />
         <Services />
-        <Projects />
-        <WhyVirelix />
-        <div id="about">
-          <About />
-        </div>
-        <Contact />
-      </div>
+        <Architecture />
+        <section id="protocol">
+          <Protocol />
+        </section>
+        <CTA />
+      </article>
       <Footer />
     </main>
   );

@@ -1,65 +1,54 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/Button";
-import { Section } from "@/components/ui/Section";
+import Image from "next/image";
 
 export const Hero = () => {
     return (
-        <Section className="relative min-h-[90vh] flex items-center pt-32 md:pt-40">
-            {/* Background Glow */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-4xl opacity-20 pointer-events-none">
-                <div className="absolute top-0 left-0 w-full h-full bg-gradient-radial from-primary/30 to-transparent blur-3xl animate-pulse-slow" />
-                <div className="absolute bottom-0 right-0 w-full h-full bg-gradient-radial from-secondary/30 to-transparent blur-3xl animate-pulse-slow delay-1000" />
-            </div>
-
-            <div className="relative z-10 text-center space-y-8 max-w-4xl mx-auto">
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8 }}
-                    className="inline-block px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium mb-4"
-                >
-                    Yeni Nesil Yapay Zeka Platformu
-                </motion.div>
-
-                <motion.h1
-                    className="text-6xl md:text-8xl font-bold font-space leading-tight tracking-tight"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                >
-                    Dijital Geleceği <br />
-                    <span className="text-gradient">İnşa Ediyoruz.</span>
-                </motion.h1>
-
-                <motion.p
-                    className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
-                >
-                    Yarının vizyonerleri için ölçeklenebilir yapay zeka sistemleri, yüksek performanslı uygulamalar ve yeni nesil dijital altyapılar tasarlıyoruz.
-                </motion.p>
-
-                <motion.div
-                    className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.6 }}
-                >
-                    <Button size="lg" variant="primary">Çalışmalarımızı İnceleyin</Button>
-                    <Button size="lg" variant="outline">Proje Başlatın</Button>
-                </motion.div>
-            </div>
-
-            {/* Decorative Elements */}
-            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-40">
-                <div className="w-1 h-12 rounded-full border border-white/20 flex flex-col items-center">
-                    <div className="w-1 h-3 bg-white/40 rounded-full mt-1 animate-ping" />
+        <section className="relative min-h-screen flex items-center pt-24 overflow-hidden bg-surface">
+            {/* Background Image & Overlays */}
+            <div className="absolute inset-0 z-0">
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-surface/80 to-surface z-10"></div>
+                <div className="relative w-full h-full opacity-40 mix-blend-screen">
+                    <Image 
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_RRs8FhVqhjvLSJWIUSCsgyEoUr66zkDFBMuT2gIhLzs9e8KgE0J-riv7atzwgfpNlCwreq50l3OTKjFUL1Vch8oUVbj9qZzqMiL7kvw3kL88yYYA2E9hQdPSe956BxNOFT4SzcNS3jxhGpfSn2KNMepNAnlGqmlgNUeHK3zUcbksztkFuxmEzbCTlqQequre6N_KWH0YsAuTzuBxlk2sVGJvOk21l9_4ml3vobwNro6LyfHrFCGwE8iJ0VQFu-uQQD4aTRO6pTA"
+                        alt="Yapay Sinir Ağları Arka Planı"
+                        fill
+                        priority
+                        className="object-cover"
+                    />
                 </div>
             </div>
-        </Section>
+
+            <div className="relative z-10 px-6 md:px-12 max-w-[1920px] mx-auto w-full grid grid-cols-12 gap-8 font-headline">
+                <div className="col-span-12 lg:col-span-8">
+                    <h1 className="text-[4rem] md:text-[7rem] lg:text-[8rem] font-bold leading-[1] tracking-tighter text-white mb-8">
+                        Zekayı <br/>
+                        <span className="text-primary-container inline-block animate-pulse">Güçlendiriyoruz</span>
+                    </h1>
+                    
+                    <p className="text-xl md:text-2xl text-on-surface-variant max-w-2xl mb-12 leading-relaxed font-body font-medium">
+                        Merkezi olmayan sinirsel ağlar üzerinden yeni nesil yapay zeka altyapısını inşa ediyoruz. 
+                        Verimliliği en üst düzeye çıkarın ve geleceği bugün şekillendiren protokollerle tanışın.
+                    </p>
+
+                    <div className="flex flex-col sm:flex-row gap-6">
+                        <button className="px-10 py-5 bg-primary-container text-white rounded-2xl font-bold text-xl hover:scale-105 transition-transform flex items-center justify-center gap-3 shadow-2xl shadow-primary-container/40 group">
+                            Çekirdeği Başlat 
+                            <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">rocket_launch</span>
+                        </button>
+                        <button className="px-10 py-5 bg-surface-container-highest text-primary rounded-2xl font-bold text-xl hover:bg-surface-container-high transition-all border border-white/5">
+                            Dokümantasyon
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            {/* Decorative Scroll Indicator */}
+            <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-4 opacity-50">
+                <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-white">Scroll</span>
+                <div className="w-px h-16 bg-gradient-to-b from-primary-container to-transparent"></div>
+            </div>
+        </section>
     );
 };

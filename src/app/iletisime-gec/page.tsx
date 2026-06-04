@@ -29,15 +29,15 @@ export default function IletisimeGecPage() {
             >
                 <Link href="/why-us" className="flex flex-col items-center justify-center text-slate-400 py-3 px-4 hover:bg-white/5 transition-all active:scale-95 duration-200">
                     <span className="material-symbols-outlined text-2xl">insights</span>
-                    <span className="text-[10px] uppercase font-bold tracking-widest mt-1">Vision</span>
+                    <span className="text-[10px] uppercase font-bold tracking-widest mt-1">Vizyon</span>
                 </Link>
                 <Link href="/#projects" className="flex flex-col items-center justify-center text-slate-400 py-3 px-4 hover:bg-white/5 transition-all active:scale-95 duration-200">
                     <span className="material-symbols-outlined text-2xl">psychology</span>
-                    <span className="text-[10px] uppercase font-bold tracking-widest mt-1">Projects</span>
+                    <span className="text-[10px] uppercase font-bold tracking-widest mt-1">Projeler</span>
                 </Link>
                 <Link href="/#testimonials" className="flex flex-col items-center justify-center text-slate-400 py-3 px-4 hover:bg-white/5 transition-all active:scale-95 duration-200">
                     <span className="material-symbols-outlined text-2xl">hub</span>
-                    <span className="text-[10px] uppercase font-bold tracking-widest mt-1">Network</span>
+                    <span className="text-[10px] uppercase font-bold tracking-widest mt-1">Referanslar</span>
                 </Link>
                 <Link href="/iletisime-gec" className="flex flex-col items-center justify-center bg-gradient-to-b from-primary-container to-[#5a00c6] text-white rounded-2xl py-3 px-6 shadow-lg shadow-primary-container/20 active:scale-95 duration-200">
                     <span className="material-symbols-outlined text-2xl">mail</span>

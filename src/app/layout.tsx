@@ -61,6 +61,10 @@ export default function RootLayout({
           src="https://www.highperformanceformat.com/d5990ff14a52669f12350fed0963114a/invoke.js"
           strategy="afterInteractive"
         />
+        <Script
+          src="https://www.effectivecpmnetwork.com/uvcxnpe6?key=0726bd201767cac3510703fd2e16e16c"
+          strategy="afterInteractive"
+        />
       </head>
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased bg-background text-foreground`}

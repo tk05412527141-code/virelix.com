@@ -128,7 +128,7 @@ export const Navbar = () => {
         <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
             scrolled ? "bg-[#121027]/80 backdrop-blur-xl py-3 border-b border-white/5 shadow-lg shadow-black/10" : "bg-transparent py-5 md:py-6"
         }`}>
-            <div className="flex justify-between items-center w-full px-8 md:px-12 max-w-7xl mx-auto font-headline tracking-tight">
+            <div className="flex justify-between items-center w-full px-6 md:px-12 max-w-7xl mx-auto font-headline tracking-tight">
                 <Link href="/" className="text-2xl font-bold tracking-tighter text-white">
                     Virelix
                 </Link>
@@ -172,11 +172,11 @@ export const Navbar = () => {
                         exit={{ opacity: 0, y: -20 }}
                         className="absolute top-full left-0 w-full bg-[#121027]/95 backdrop-blur-2xl border-b border-white/5 p-8 flex flex-col gap-6 md:hidden glass-panel"
                     >
-                        <Link onClick={(e) => { setMobileMenuOpen(false); handleNavLinkClick(e, "/#why-us"); }} href="/#why-us" className={getMobileLinkClass("why-us")}>Neden Biz?</Link>
+                        <Link onClick={() => setMobileMenuOpen(false)} href="/why-us" className={getMobileLinkClass("why-us")}>Neden Biz?</Link>
                         <Link onClick={(e) => { setMobileMenuOpen(false); handleNavLinkClick(e, "/#projects"); }} href="/#projects" className={getMobileLinkClass("projects")}>Projeler</Link>
                         <Link onClick={(e) => { setMobileMenuOpen(false); handleNavLinkClick(e, "/#testimonials"); }} href="/#testimonials" className={getMobileLinkClass("testimonials")}>Referanslar</Link>
-                        <Link onClick={(e) => { setMobileMenuOpen(false); handleNavLinkClick(e, "/#contact"); }} href="/#contact" className={getMobileLinkClass("iletisime-gec")}>İletişim</Link>
-                        <Link href="/iletisime-gec" className="bg-primary-container text-white py-5 rounded-2xl font-bold text-center text-lg mt-4">İletişime Geç</Link>
+                        <Link onClick={() => setMobileMenuOpen(false)} href="/iletisime-gec" className={getMobileLinkClass("iletisime-gec")}>İletişim</Link>
+                        <Link href="/iletisime-gec" onClick={() => setMobileMenuOpen(false)} className="bg-primary-container text-white py-5 rounded-2xl font-bold text-center text-lg mt-4">İletişime Geç</Link>
                     </motion.div>
                 )}
             </AnimatePresence>

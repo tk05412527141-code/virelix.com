@@ -102,7 +102,7 @@ export const Contact = () => {
                                 </div>
                                 <div className="space-y-2">
                                     <label className="block text-sm font-bold text-slate-400 uppercase tracking-widest pl-1">E-posta</label>
-                                    <input name="email" className="w-full bg-[#0d0b22]/50 border border-white/5 rounded-2xl p-4 text-white focus:ring-2 focus:ring-primary-container focus:bg-[#0d0b22]/80 transition-all outline-none" placeholder="E-posta Adresiniz" type="email" required />
+                                    <input name="email" className="w-full bg-[#0d0b22]/50 border border-white/5 rounded-2xl p-4 text-white focus:ring-2 focus:ring-primary-container focus:bg-[#0d0b22]/80 transition-all outline-none" placeholder="E-posta" type="email" required />
                                 </div>
                             </div>
                             <div className="space-y-2">

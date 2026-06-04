@@ -45,15 +45,19 @@ export async function submitContactForm(formData: { name: string; email: string;
 
         // 4. Save to Supabase (as a backup / log)
         try {
-            await supabase
-                .from('contacts')
-                .insert([
-                    {
-                        name: formData.name,
-                        email: formData.email,
-                        vision: formData.vision
-                    }
-                ]);
+            if (supabase) {
+                await supabase
+                    .from('contacts')
+                    .insert([
+                        {
+                            name: formData.name,
+                            email: formData.email,
+                            vision: formData.vision
+                        }
+                    ]);
+            } else {
+                console.warn("Supabase is not configured (missing env variables). Skipping database backup.");
+            }
         } catch (dbError) {
             console.error("Supabase insert error (continuing anyway):", dbError);
         }

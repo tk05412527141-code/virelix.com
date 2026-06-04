@@ -42,6 +42,10 @@ export default function RootLayout({
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
+        <Script
+          src="https://pl29641435.effectivecpmnetwork.com/8b/b3/ba/8bb3ba951d8c530940e1e9787b2ebbfc.js"
+          strategy="afterInteractive"
+        />
       </head>
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased bg-background text-foreground`}

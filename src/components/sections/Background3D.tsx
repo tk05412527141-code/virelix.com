@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 
 /**
  * Background3D: A high-performance interactive neural network (Plexus) background.
@@ -8,6 +9,16 @@ import React, { useEffect, useRef } from "react";
  */
 export const Background3D = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const pathname = usePathname();
+  const isTransitioningRef = useRef(false);
+
+  useEffect(() => {
+    isTransitioningRef.current = true;
+    const timer = setTimeout(() => {
+      isTransitioningRef.current = false;
+    }, 600);
+    return () => clearTimeout(timer);
+  }, [pathname]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -66,7 +77,7 @@ export const Background3D = () => {
 
     const init = () => {
       particles = [];
-      const density = window.innerWidth < 768 ? 40 : 100;
+      const density = window.innerWidth < 768 ? 25 : 60;
       for (let i = 0; i < density; i++) {
         particles.push(new Particle());
       }
@@ -79,19 +90,24 @@ export const Background3D = () => {
     };
 
     const drawLines = () => {
+      const maxDistance = 120;
+      const maxDistanceSq = maxDistance * maxDistance;
       for (let i = 0; i < particles.length; i++) {
+        const p1 = particles[i];
         for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
+          const p2 = particles[j];
+          const dx = p1.x - p2.x;
+          const dy = p1.y - p2.y;
+          const distSq = dx * dx + dy * dy;
 
-          if (dist < 150) {
-            const opacity = (1 - dist / 150) * 0.3;
+          if (distSq < maxDistanceSq) {
+            const dist = Math.sqrt(distSq);
+            const opacity = (1 - dist / maxDistance) * 0.25;
             ctx!.strokeStyle = `rgba(124, 58, 237, ${opacity})`;
             ctx!.lineWidth = 0.5;
             ctx!.beginPath();
-            ctx!.moveTo(particles[i].x, particles[i].y);
-            ctx!.lineTo(particles[j].x, particles[j].y);
+            ctx!.moveTo(p1.x, p1.y);
+            ctx!.lineTo(p2.x, p2.y);
             ctx!.stroke();
           }
         }
@@ -99,6 +115,13 @@ export const Background3D = () => {
     };
 
     const animate = () => {
+      animationFrameId = requestAnimationFrame(animate);
+
+      if (isTransitioningRef.current) {
+        // Pause updating & redrawing during page transitions to free up CPU
+        return;
+      }
+
       ctx!.fillStyle = "#121027"; // Deep violet/dark background
       ctx!.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -107,7 +130,6 @@ export const Background3D = () => {
         p.draw();
       });
       drawLines();
-      animationFrameId = requestAnimationFrame(animate);
     };
 
     const onMouseMove = (e: MouseEvent) => {

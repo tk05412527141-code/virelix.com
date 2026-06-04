@@ -83,6 +83,7 @@ export const Hero = () => {
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx-upZMfB2v0SEdpyB_hWonrClft3WlXx3R5k5WsnPmthVBW1DYyPRBAeg9v3hUBFo3h7ADXvm7EHZi4zOtMK73kLaVqyFiLQFjQO46ogWMcIqN2Cipg5VJ4rnS6f-aflR4cWmiapWOd27IaeJ4fIu43pNYZlRPis2GKcD0sL3_uuvYQK8C2RlsZWWIrPqybt5Ih3qBhMdoEVWFPsUHCUdAGn-I5i161yOy9J_7BbPNZu2_RbHE86XSL-VV6I353ApGfsTyF8rOKI"
                             alt="Abstract Neural Network Visualization"
                             fill
+                            priority
                         />
                         <div className="absolute inset-0 bg-gradient-to-tr from-primary-container/10 to-transparent"></div>
                     </div>

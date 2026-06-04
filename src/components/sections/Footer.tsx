@@ -19,9 +19,9 @@ export const Footer = () => {
                 <div>
                     <h5 className="text-white font-bold mb-6 text-lg font-headline">Kurumsal</h5>
                     <ul className="space-y-4">
-                        <li><Link className="text-slate-400 hover:text-primary-container hover:translate-x-1 transition-transform inline-block" href="#">Hakkımızda</Link></li>
-                        <li><Link className="text-slate-400 hover:text-primary-container hover:translate-x-1 transition-transform inline-block" href="#">Kariyer</Link></li>
-                        <li><Link className="text-slate-400 hover:text-primary-container hover:translate-x-1 transition-transform inline-block" href="#">Blog</Link></li>
+                        <li><Link className="text-slate-400 hover:text-primary-container hover:translate-x-1 transition-transform inline-block" href="/why-us">Hakkımızda</Link></li>
+                        <li><Link className="text-slate-400 hover:text-primary-container hover:translate-x-1 transition-transform inline-block" href="#" onClick={(e) => e.preventDefault()}>Kariyer</Link></li>
+                        <li><Link className="text-slate-400 hover:text-primary-container hover:translate-x-1 transition-transform inline-block" href="#" onClick={(e) => e.preventDefault()}>Blog</Link></li>
                     </ul>
                 </div>
 
@@ -29,9 +29,9 @@ export const Footer = () => {
                 <div>
                     <h5 className="text-white font-bold mb-6 text-lg font-headline">Destek</h5>
                     <ul className="space-y-4">
-                        <li><Link className="text-slate-400 hover:text-primary-container hover:translate-x-1 transition-transform inline-block" href="#">Gizlilik Politikası</Link></li>
-                        <li><Link className="text-slate-400 hover:text-primary-container hover:translate-x-1 transition-transform inline-block" href="#">Kullanım Şartları</Link></li>
-                        <li><Link className="text-slate-400 hover:text-primary-container hover:translate-x-1 transition-transform inline-block" href="#">Güvenlik</Link></li>
+                        <li><Link className="text-slate-400 hover:text-primary-container hover:translate-x-1 transition-transform inline-block" href="/gizlilik-politikasi">Gizlilik Politikası</Link></li>
+                        <li><Link className="text-slate-400 hover:text-primary-container hover:translate-x-1 transition-transform inline-block" href="/kullanim-kosullari">Kullanım Şartları</Link></li>
+                        <li><Link className="text-slate-400 hover:text-primary-container hover:translate-x-1 transition-transform inline-block" href="/gizlilik-politikasi">Güvenlik</Link></li>
                     </ul>
                 </div>
 
@@ -57,8 +57,8 @@ export const Footer = () => {
             <div className="max-w-7xl mx-auto border-t border-white/5 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                 <div className="text-slate-400 text-sm">© {new Date().getFullYear()} Virelix AI. Tüm hakları saklıdır. 123 İnovasyon Yolu, İstanbul.</div>
                 <div className="flex gap-6 text-sm">
-                    <Link className="text-slate-400 hover:text-white" href="#">Güvenlik Merkezi</Link>
-                    <Link className="text-slate-400 hover:text-white" href="#">Çerez Politikası</Link>
+                    <Link className="text-slate-400 hover:text-white" href="/gizlilik-politikasi">Güvenlik Merkezi</Link>
+                    <Link className="text-slate-400 hover:text-white" href="/gizlilik-politikasi">Çerez Politikası</Link>
                 </div>
             </div>
         </footer>

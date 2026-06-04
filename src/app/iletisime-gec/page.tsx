@@ -8,7 +8,7 @@ import { ConsultSection } from "@/components/sections/ConsultSection";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 
-export default function ConsultPage() {
+export default function IletisimeGecPage() {
     return (
         <main className="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-white overflow-x-hidden min-h-screen">
             {/* Standard Navbar for consistency */}
@@ -39,9 +39,9 @@ export default function ConsultPage() {
                     <span className="material-symbols-outlined text-2xl">hub</span>
                     <span className="text-[10px] uppercase font-bold tracking-widest mt-1">Network</span>
                 </Link>
-                <Link href="/consult" className="flex flex-col items-center justify-center bg-gradient-to-b from-primary-container to-[#5a00c6] text-white rounded-2xl py-3 px-6 shadow-lg shadow-primary-container/20 active:scale-95 duration-200">
+                <Link href="/iletisime-gec" className="flex flex-col items-center justify-center bg-gradient-to-b from-primary-container to-[#5a00c6] text-white rounded-2xl py-3 px-6 shadow-lg shadow-primary-container/20 active:scale-95 duration-200">
                     <span className="material-symbols-outlined text-2xl">mail</span>
-                    <span className="text-[10px] uppercase font-bold tracking-widest mt-1">Consult</span>
+                    <span className="text-[10px] uppercase font-bold tracking-widest mt-1">İletişime Geç</span>
                 </Link>
             </motion.nav>
         </main>

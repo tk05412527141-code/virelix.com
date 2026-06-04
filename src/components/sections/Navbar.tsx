@@ -41,8 +41,8 @@ export const Navbar = () => {
             setActiveSection("why-us");
             return;
         }
-        if (pathname === "/consult") {
-            setActiveSection("consult");
+        if (pathname === "/iletisime-gec") {
+            setActiveSection("iletisime-gec");
             return;
         }
         if (pathname !== "/") {
@@ -90,7 +90,7 @@ export const Navbar = () => {
         if (section === "why-us") return activeSection === "why-us";
         if (section === "projects") return activeSection === "projects";
         if (section === "testimonials") return activeSection === "testimonials";
-        if (section === "consult") return activeSection === "consult" || activeSection === "contact";
+        if (section === "iletisime-gec") return activeSection === "iletisime-gec" || activeSection === "contact";
         return false;
     };
 
@@ -143,14 +143,14 @@ export const Navbar = () => {
                     <Link href="/#testimonials" className={getLinkClass("testimonials")} onClick={(e) => handleNavLinkClick(e, "/#testimonials")}>
                         Referanslar
                     </Link>
-                    <Link href="/consult" className={getLinkClass("consult")}>
+                    <Link href="/iletisime-gec" className={getLinkClass("iletisime-gec")}>
                         İletişim
                     </Link>
                 </div>
 
                 <div className="flex items-center gap-6">
-                    <Link href="/consult" className="hidden sm:block bg-primary-container text-white px-7 py-2.5 rounded-xl font-bold hover:scale-95 duration-200 ease-in-out transition-all shadow-lg shadow-primary-container/20 text-sm">
-                        Hemen Başlayın
+                    <Link href="/iletisime-gec" className="hidden sm:block bg-primary-container text-white px-7 py-2.5 rounded-xl font-bold hover:scale-95 duration-200 ease-in-out transition-all shadow-lg shadow-primary-container/20 text-sm">
+                        İletişime Geç
                     </Link>
                     <button 
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -175,8 +175,8 @@ export const Navbar = () => {
                         <Link onClick={(e) => { setMobileMenuOpen(false); handleNavLinkClick(e, "/#why-us"); }} href="/#why-us" className={getMobileLinkClass("why-us")}>Neden Biz?</Link>
                         <Link onClick={(e) => { setMobileMenuOpen(false); handleNavLinkClick(e, "/#projects"); }} href="/#projects" className={getMobileLinkClass("projects")}>Projeler</Link>
                         <Link onClick={(e) => { setMobileMenuOpen(false); handleNavLinkClick(e, "/#testimonials"); }} href="/#testimonials" className={getMobileLinkClass("testimonials")}>Referanslar</Link>
-                        <Link onClick={(e) => { setMobileMenuOpen(false); handleNavLinkClick(e, "/#contact"); }} href="/#contact" className={getMobileLinkClass("consult")}>İletişim</Link>
-                        <Link href="/consult" className="bg-primary-container text-white py-5 rounded-2xl font-bold text-center text-lg mt-4">Hemen Başlayın</Link>
+                        <Link onClick={(e) => { setMobileMenuOpen(false); handleNavLinkClick(e, "/#contact"); }} href="/#contact" className={getMobileLinkClass("iletisime-gec")}>İletişim</Link>
+                        <Link href="/iletisime-gec" className="bg-primary-container text-white py-5 rounded-2xl font-bold text-center text-lg mt-4">İletişime Geç</Link>
                     </motion.div>
                 )}
             </AnimatePresence>

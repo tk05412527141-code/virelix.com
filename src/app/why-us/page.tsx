@@ -24,7 +24,7 @@ export default function WhyUsPage() {
                     <motion.h1 
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="font-headline text-6xl md:text-8xl font-bold text-white leading-[1.05] tracking-tighter mb-8"
+                        className="font-headline text-4xl sm:text-6xl md:text-8xl font-bold text-white leading-[1.05] tracking-tighter mb-8"
                     >
                         Neden <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-container via-tertiary to-primary-fixed">Virelix?</span>
                     </motion.h1>
@@ -66,7 +66,7 @@ export default function WhyUsPage() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.1 }}
-                            className="bg-[#1f1d34]/60 backdrop-blur-xl rounded-[2rem] p-8 border border-white/5 relative overflow-hidden group shadow-2xl"
+                            className="bg-[#1f1d34]/60 backdrop-blur-xl rounded-3xl md:rounded-[2rem] p-6 sm:p-8 border border-white/5 relative overflow-hidden group shadow-2xl"
                         >
                             <div className={`absolute -right-4 -top-4 w-32 h-32 ${card.color} rounded-full blur-[80px] transition-all group-hover:scale-110`}></div>
                             <span className="material-symbols-outlined text-primary-container text-4xl mb-6">{card.icon}</span>
@@ -81,21 +81,21 @@ export default function WhyUsPage() {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="mb-20 bg-surface-container-lowest/80 backdrop-blur-2xl rounded-[3rem] p-10 md:p-16 border border-white/5 shadow-2xl"
+                    className="mb-20 bg-surface-container-lowest/80 backdrop-blur-2xl rounded-3xl md:rounded-[3rem] p-6 sm:p-10 md:p-16 border border-white/5 shadow-2xl"
                 >
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
                         <div className="text-center">
                             <div className="text-5xl md:text-6xl font-headline font-bold text-primary mb-3">99.9%</div>
                             <div className="text-xs uppercase tracking-[0.4em] text-on-surface-variant font-bold">Uptime Oranı</div>
                         </div>
-                        <div className="text-center md:border-l border-white/5">
+                        <div className="text-center border-y md:border-y-0 md:border-x border-white/5 py-8 md:py-0">
                             <div className="text-5xl md:text-6xl font-headline font-bold text-primary mb-3">0.02ms</div>
                             <div className="text-xs uppercase tracking-[0.4em] text-on-surface-variant font-bold">Gecikme Süresi</div>
                         </div>
-                    </div>
-                    <div className="mt-12 pt-12 border-t border-white/5 text-center">
-                        <div className="text-5xl md:text-6xl font-headline font-bold text-primary mb-3">500TB+</div>
-                        <div className="text-xs uppercase tracking-[0.4em] text-on-surface-variant font-bold">Günlük Veri İşleme</div>
+                        <div className="text-center">
+                            <div className="text-5xl md:text-6xl font-headline font-bold text-primary mb-3">500TB+</div>
+                            <div className="text-xs uppercase tracking-[0.4em] text-on-surface-variant font-bold">Günlük Veri İşleme</div>
+                        </div>
                     </div>
                 </motion.section>
 
@@ -106,7 +106,7 @@ export default function WhyUsPage() {
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="relative bg-[#1f1d34]/40 backdrop-blur-md rounded-[3rem] p-10 md:p-16 border border-primary-container/10 shadow-2xl overflow-hidden"
+                        className="relative bg-[#1f1d34]/40 backdrop-blur-md rounded-3xl md:rounded-[3rem] p-6 sm:p-10 md:p-16 border border-primary-container/10 shadow-2xl overflow-hidden"
                     >
                         <h2 className="font-headline text-3xl font-bold mb-6 tracking-tight text-white">Misyonumuz: Ethereal Architect</h2>
                         <p className="text-on-surface-variant text-xl leading-[1.8] italic mb-10 max-w-3xl">

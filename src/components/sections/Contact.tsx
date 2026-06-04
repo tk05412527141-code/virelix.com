@@ -39,8 +39,8 @@ export const Contact = () => {
     };
 
     return (
-        <section className="py-24 px-8 bg-transparent relative z-10" id="contact">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
+        <section className="py-24 px-6 sm:px-8 bg-transparent relative z-10" id="contact">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
                 {/* Left Side: Info */}
                 <motion.div
                     initial={{ opacity: 0, x: -30 }}
@@ -75,7 +75,7 @@ export const Contact = () => {
                     initial={{ opacity: 0, x: 30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    className="bg-[#1f1d34]/60 backdrop-blur-xl p-8 md:p-12 rounded-[2.5rem] border border-white/10 shadow-2xl relative overflow-hidden"
+                    className="bg-[#1f1d34]/60 backdrop-blur-xl p-6 sm:p-8 md:p-12 rounded-3xl md:rounded-[2.5rem] border border-white/10 shadow-2xl relative overflow-hidden"
                 >
                     <div className="absolute inset-0 bg-gradient-to-br from-primary-container/10 to-transparent opacity-50"></div>
                     

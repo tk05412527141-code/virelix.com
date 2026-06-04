@@ -44,7 +44,7 @@ export const Hero = () => {
             onMouseLeave={handleMouseLeave}
             className="relative min-h-screen flex items-center pt-24 overflow-hidden"
         >
-            <div className="max-w-7xl mx-auto px-8 md:px-12 w-full flex flex-col md:flex-row items-center gap-16 relative z-10">
+            <div className="max-w-7xl mx-auto px-6 md:px-12 w-full flex flex-col md:flex-row items-center gap-16 relative z-10">
                 {/* Left Content */}
                 <motion.div 
                     style={{ x: contentX, y: contentY }}
@@ -53,7 +53,7 @@ export const Hero = () => {
                     <span className="inline-block px-4 py-1 rounded-full bg-surface-container-high text-primary text-sm font-medium mb-6">
                         Yapay Zeka Mimarları
                     </span>
-                    <h1 className="text-5xl md:text-7xl font-headline font-bold leading-[1.1] mb-8 tracking-tighter text-white">
+                    <h1 className="text-4xl sm:text-5xl md:text-7xl font-headline font-bold leading-[1.1] mb-8 tracking-tighter text-white">
                         İşletmenizi <br/><span className="text-primary-container">Geleceğe</span> Taşıyın.
                     </h1>
                     <p className="text-lg text-on-surface-variant max-w-lg mb-10 leading-relaxed font-body">
@@ -77,7 +77,7 @@ export const Hero = () => {
                     }}
                     className="w-full md:w-1/2 relative"
                 >
-                    <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl relative border border-white/10 group">
+                    <div className="aspect-[4/3] sm:aspect-square rounded-3xl overflow-hidden shadow-2xl relative border border-white/10 group">
                         <Image 
                             className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" 
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx-upZMfB2v0SEdpyB_hWonrClft3WlXx3R5k5WsnPmthVBW1DYyPRBAeg9v3hUBFo3h7ADXvm7EHZi4zOtMK73kLaVqyFiLQFjQO46ogWMcIqN2Cipg5VJ4rnS6f-aflR4cWmiapWOd27IaeJ4fIu43pNYZlRPis2GKcD0sL3_uuvYQK8C2RlsZWWIrPqybt5Ih3qBhMdoEVWFPsUHCUdAGn-I5i161yOy9J_7BbPNZu2_RbHE86XSL-VV6I353ApGfsTyF8rOKI"
@@ -91,7 +91,7 @@ export const Hero = () => {
                     <motion.div 
                         animate={{ y: [0, -10, 0] }}
                         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                        className="absolute -bottom-6 -left-6 bg-[#1f1d34]/90 p-6 rounded-2xl backdrop-blur-xl shadow-2xl border border-white/10 z-20"
+                        className="absolute -bottom-6 left-4 sm:-left-6 bg-[#1f1d34]/90 p-6 rounded-2xl backdrop-blur-xl shadow-2xl border border-white/10 z-20"
                     >
                         <div className="flex items-center gap-4">
                             <div className="h-12 w-12 rounded-full bg-primary-container flex items-center justify-center shadow-lg shadow-primary-container/30">

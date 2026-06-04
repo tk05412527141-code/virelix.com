@@ -22,7 +22,7 @@ export const ConsultHero = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                className="text-6xl md:text-8xl font-headline font-bold leading-[1.05] tracking-tighter mb-10 max-w-4xl text-white"
+                className="text-4xl sm:text-6xl md:text-8xl font-headline font-bold leading-[1.05] tracking-tighter mb-10 max-w-4xl text-white"
             >
                 Geleceğinizi <br/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-container via-tertiary to-primary-fixed block mt-2">

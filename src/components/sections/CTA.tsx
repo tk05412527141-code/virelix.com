@@ -11,16 +11,16 @@ export const CTA = () => {
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
-        className="max-w-5xl mx-auto rounded-[3rem] bg-gradient-to-br from-primary-container to-[#5a00c6] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl shadow-primary-container/20 group"
+        className="max-w-5xl mx-auto rounded-3xl md:rounded-[3rem] bg-gradient-to-br from-primary-container to-[#5a00c6] p-6 sm:p-12 md:p-20 text-center relative overflow-hidden shadow-2xl shadow-primary-container/20 group"
       >
         <div className="relative z-10">
-          <h2 className="text-4xl md:text-6xl font-headline font-bold text-white mb-8 tracking-tighter leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-headline font-bold text-white mb-6 sm:mb-8 tracking-tighter leading-tight">
             Dönüşümünüzü Bugün Başlatın
           </h2>
-          <p className="text-white/80 max-w-2xl mx-auto text-xl mb-10 font-medium">
+          <p className="text-white/80 max-w-2xl mx-auto text-lg sm:text-xl mb-8 sm:mb-10 font-medium">
             İşletmenizin yapay zeka potansiyelini keşfetmek için uzmanlarımızla bir görüşme planlayın.
           </p>
-          <Link href="/iletisime-gec" className="bg-white text-primary-container px-12 py-5 rounded-2xl inline-block font-bold text-xl hover:scale-105 transition-transform shadow-2xl active:scale-95 duration-200">
+          <Link href="/iletisime-gec" className="bg-white text-primary-container px-8 sm:px-12 py-4 sm:py-5 rounded-2xl inline-block font-bold text-lg sm:text-xl hover:scale-105 transition-transform shadow-2xl active:scale-95 duration-200">
             Hemen Ücretsiz Danışmanlık Alın
           </Link>
         </div>

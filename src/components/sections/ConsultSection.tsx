@@ -38,7 +38,7 @@ export const ConsultSection = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="p-8 rounded-[2rem] bg-[#1f1d34]/70 backdrop-blur-xl border border-white/5 shadow-2xl relative overflow-hidden group"
+                        className="p-6 sm:p-8 rounded-3xl md:rounded-[2rem] bg-[#1f1d34]/70 backdrop-blur-xl border border-white/5 shadow-2xl relative overflow-hidden group"
                     >
                         <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary-container/10 blur-[100px] rounded-full group-hover:bg-primary-container/20 transition-colors"></div>
                         <h3 className="text-2xl font-headline font-bold mb-8 text-white">Uzmanlık Alanlarımız</h3>
@@ -68,7 +68,7 @@ export const ConsultSection = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="p-8 rounded-[2rem] bg-surface-container-lowest border border-white/5 aspect-video relative overflow-hidden flex flex-col justify-end group shadow-2xl"
+                        className="p-6 sm:p-8 rounded-3xl md:rounded-[2rem] bg-surface-container-lowest border border-white/5 aspect-video relative overflow-hidden flex flex-col justify-end group shadow-2xl"
                     >
                         <div className="absolute inset-0 z-0">
                             <Image 
@@ -91,7 +91,7 @@ export const ConsultSection = () => {
                     initial={{ opacity: 0, x: 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    className="lg:col-span-7 bg-[#1f1d34]/80 backdrop-blur-xl p-8 md:p-12 rounded-[2.5rem] border border-white/10 shadow-[0_32px_128px_rgba(0,0,0,0.6)]"
+                    className="lg:col-span-7 bg-[#1f1d34]/80 backdrop-blur-xl p-6 sm:p-8 md:p-12 rounded-3xl md:rounded-[2.5rem] border border-white/10 shadow-[0_32px_128px_rgba(0,0,0,0.6)]"
                 >
                     {status === 'success' ? (
                         <div className="h-full flex flex-col items-center justify-center text-center py-20 space-y-6">
@@ -103,8 +103,8 @@ export const ConsultSection = () => {
                             <button onClick={() => setStatus('idle')} className="bg-primary-container text-white px-10 py-4 rounded-2xl font-bold text-lg mt-8">Yeni Talep Gönder</button>
                         </div>
                     ) : (
-                        <form onSubmit={handleSubmit} className="space-y-10 group/form">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <form onSubmit={handleSubmit} className="space-y-8 sm:space-y-10 group/form">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                                 <div className="space-y-3">
                                     <label className="text-xs uppercase tracking-[0.2em] text-slate-400 font-bold ml-1">İsim Soyisim</label>
                                     <input 

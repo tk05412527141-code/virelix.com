@@ -46,6 +46,21 @@ export default function RootLayout({
           src="https://pl29641435.effectivecpmnetwork.com/8b/b3/ba/8bb3ba951d8c530940e1e9787b2ebbfc.js"
           strategy="afterInteractive"
         />
+        <Script id="ad-options-setup" strategy="afterInteractive">
+          {`
+            window.atOptions = {
+              'key' : 'd5990ff14a52669f12350fed0963114a',
+              'format' : 'iframe',
+              'height' : 60,
+              'width' : 468,
+              'params' : {}
+            };
+          `}
+        </Script>
+        <Script
+          src="https://www.highperformanceformat.com/d5990ff14a52669f12350fed0963114a/invoke.js"
+          strategy="afterInteractive"
+        />
       </head>
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased bg-background text-foreground`}

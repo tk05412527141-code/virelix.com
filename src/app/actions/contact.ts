@@ -12,7 +12,7 @@ export async function submitContactForm(formData: { name: string; email: string;
         // 2. Parse selected area from vision if present (formatted as "[Area] Details...")
         let area = "";
         let details = formData.vision || "";
-        const match = details.match(/^\[(.*?)\] (.*)$/s);
+        const match = details.match(/^\[([\s\S]*?)\] ([\s\S]*)$/);
         if (match) {
             area = match[1];
             details = match[2];

@@ -54,7 +54,7 @@ export const Contact = () => {
                     
                     <div className="space-y-8">
                         {[
-                            { icon: "mail", title: "E-posta", content: "hello@virelix.ai" },
+                            { icon: "mail", title: "E-posta", content: "tun4klc@gmail.com" },
                             { icon: "call", title: "Telefon", content: "+90 212 999 00 00" },
                             { icon: "location_on", title: "Adres", content: "Levent Plaza, No: 123, Kat: 15\nBeşiktaş, İstanbul" },
                         ].map((item, index) => (

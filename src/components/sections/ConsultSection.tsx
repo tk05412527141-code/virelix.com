@@ -121,7 +121,7 @@ export const ConsultSection = () => {
                                         name="email"
                                         required
                                         className="w-full bg-[#0d0b22]/50 border border-white/5 rounded-2xl px-5 py-5 text-on-surface placeholder:text-outline-variant/30 focus:ring-2 focus:ring-primary-container/40 focus:bg-surface-container-highest transition-all duration-300 outline-none" 
-                                        placeholder="ornek@alanadi.com" 
+                                        placeholder="tun4klc@gmail.com" 
                                         type="email"
                                     />
                                 </div>

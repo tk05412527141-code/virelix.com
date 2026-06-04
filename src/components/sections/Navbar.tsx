@@ -2,11 +2,14 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
 export const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const pathname = usePathname();
+    const [activeSection, setActiveSection] = useState<string>("");
 
     useEffect(() => {
         const handleScroll = () => {
@@ -15,6 +18,80 @@ export const Navbar = () => {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
+    useEffect(() => {
+        if (pathname === "/why-us") {
+            setActiveSection("why-us");
+            return;
+        }
+        if (pathname === "/consult") {
+            setActiveSection("consult");
+            return;
+        }
+        if (pathname !== "/") {
+            setActiveSection("");
+            return;
+        }
+
+        const sections = ["why-us", "projects", "testimonials", "contact"];
+        const observers = sections.map((id) => {
+            const el = document.getElementById(id);
+            if (!el) return null;
+
+            const observer = new IntersectionObserver(
+                ([entry]) => {
+                    if (entry.isIntersecting) {
+                        setActiveSection(id);
+                    }
+                },
+                {
+                    rootMargin: "-30% 0px -50% 0px",
+                }
+            );
+            observer.observe(el);
+            return { observer, el };
+        });
+
+        const handleScrollCheck = () => {
+            if (window.scrollY < 100) {
+                setActiveSection("");
+            }
+        };
+        window.addEventListener("scroll", handleScrollCheck);
+
+        return () => {
+            observers.forEach((obs) => {
+                if (obs) {
+                    obs.observer.unobserve(obs.el);
+                }
+            });
+            window.removeEventListener("scroll", handleScrollCheck);
+        };
+    }, [pathname]);
+
+    const isActive = (section: string) => {
+        if (section === "why-us") return activeSection === "why-us";
+        if (section === "projects") return activeSection === "projects";
+        if (section === "testimonials") return activeSection === "testimonials";
+        if (section === "consult") return activeSection === "consult" || activeSection === "contact";
+        return false;
+    };
+
+    const getLinkClass = (section: string) => {
+        const active = isActive(section);
+        return `font-bold text-sm uppercase tracking-wider transition-all duration-200 border-b-2 pb-0.5 ${
+            active 
+                ? "text-primary-container border-primary-container" 
+                : "text-slate-300 border-transparent hover:text-white hover:border-white/30"
+        }`;
+    };
+
+    const getMobileLinkClass = (section: string) => {
+        const active = isActive(section);
+        return `text-2xl font-headline font-bold transition-colors ${
+            active ? "text-primary" : "text-white"
+        }`;
+    };
 
     return (
         <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -26,16 +103,16 @@ export const Navbar = () => {
                 </Link>
 
                 <div className="hidden md:flex gap-10 items-center">
-                    <Link href="/why-us" className="text-slate-300 font-medium hover:text-white transition-colors text-sm uppercase tracking-wider">
+                    <Link href="/why-us" className={getLinkClass("why-us")}>
                         Neden Biz?
                     </Link>
-                    <Link href="/#projects" className="text-slate-300 font-medium hover:text-white transition-colors text-sm uppercase tracking-wider">
+                    <Link href="/#projects" className={getLinkClass("projects")}>
                         Projeler
                     </Link>
-                    <Link href="/#testimonials" className="text-slate-300 font-medium hover:text-white transition-colors text-sm uppercase tracking-wider">
+                    <Link href="/#testimonials" className={getLinkClass("testimonials")}>
                         Referanslar
                     </Link>
-                    <Link href="/consult" className="text-primary-container font-bold border-b-2 border-primary-container pb-0.5 text-sm uppercase tracking-wider">
+                    <Link href="/consult" className={getLinkClass("consult")}>
                         İletişim
                     </Link>
                 </div>
@@ -64,10 +141,10 @@ export const Navbar = () => {
                         exit={{ opacity: 0, y: -20 }}
                         className="absolute top-full left-0 w-full bg-[#121027]/95 backdrop-blur-2xl border-b border-white/5 p-8 flex flex-col gap-6 md:hidden glass-panel"
                     >
-                        <Link onClick={() => setMobileMenuOpen(false)} href="/#why-us" className="text-2xl text-white font-headline font-bold">Neden Biz?</Link>
-                        <Link onClick={() => setMobileMenuOpen(false)} href="/#projects" className="text-2xl text-white font-headline font-bold">Projeler</Link>
-                        <Link onClick={() => setMobileMenuOpen(false)} href="/#testimonials" className="text-2xl text-white font-headline font-bold">Referanslar</Link>
-                        <Link onClick={() => setMobileMenuOpen(false)} href="/#contact" className="text-2xl text-primary font-headline font-bold">İletişim</Link>
+                        <Link onClick={() => setMobileMenuOpen(false)} href="/#why-us" className={getMobileLinkClass("why-us")}>Neden Biz?</Link>
+                        <Link onClick={() => setMobileMenuOpen(false)} href="/#projects" className={getMobileLinkClass("projects")}>Projeler</Link>
+                        <Link onClick={() => setMobileMenuOpen(false)} href="/#testimonials" className={getMobileLinkClass("testimonials")}>Referanslar</Link>
+                        <Link onClick={() => setMobileMenuOpen(false)} href="/#contact" className={getMobileLinkClass("consult")}>İletişim</Link>
                         <Link href="/consult" className="bg-primary-container text-white py-5 rounded-2xl font-bold text-center text-lg mt-4">Hemen Başlayın</Link>
                     </motion.div>
                 )}

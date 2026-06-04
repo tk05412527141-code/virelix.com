@@ -20,6 +20,23 @@ export const Navbar = () => {
     }, []);
 
     useEffect(() => {
+        // Detect if there is a hash in the URL on mount/load
+        const hash = window.location.hash;
+        if (hash) {
+            const targetId = hash.replace("#", "");
+            const element = document.getElementById(targetId);
+            if (element) {
+                setTimeout(() => {
+                    element.scrollIntoView({ behavior: "smooth" });
+                    setActiveSection(targetId);
+                }, 100);
+            }
+            // Clean up hash from URL immediately
+            window.history.replaceState(null, "", window.location.pathname);
+        }
+    }, [pathname]);
+
+    useEffect(() => {
         if (pathname === "/why-us") {
             setActiveSection("why-us");
             return;
@@ -93,6 +110,20 @@ export const Navbar = () => {
         }`;
     };
 
+    const handleNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        if (href.startsWith("/#") || href.startsWith("#")) {
+            const targetId = href.split("#")[1];
+            if (pathname === "/") {
+                e.preventDefault();
+                const element = document.getElementById(targetId);
+                if (element) {
+                    element.scrollIntoView({ behavior: "smooth" });
+                    setActiveSection(targetId);
+                }
+            }
+        }
+    };
+
     return (
         <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
             scrolled ? "bg-[#121027]/80 backdrop-blur-xl py-3 border-b border-white/5 shadow-lg shadow-black/10" : "bg-transparent py-5 md:py-6"
@@ -106,10 +137,10 @@ export const Navbar = () => {
                     <Link href="/why-us" className={getLinkClass("why-us")}>
                         Neden Biz?
                     </Link>
-                    <Link href="/#projects" className={getLinkClass("projects")}>
+                    <Link href="/#projects" className={getLinkClass("projects")} onClick={(e) => handleNavLinkClick(e, "/#projects")}>
                         Projeler
                     </Link>
-                    <Link href="/#testimonials" className={getLinkClass("testimonials")}>
+                    <Link href="/#testimonials" className={getLinkClass("testimonials")} onClick={(e) => handleNavLinkClick(e, "/#testimonials")}>
                         Referanslar
                     </Link>
                     <Link href="/consult" className={getLinkClass("consult")}>
@@ -141,10 +172,10 @@ export const Navbar = () => {
                         exit={{ opacity: 0, y: -20 }}
                         className="absolute top-full left-0 w-full bg-[#121027]/95 backdrop-blur-2xl border-b border-white/5 p-8 flex flex-col gap-6 md:hidden glass-panel"
                     >
-                        <Link onClick={() => setMobileMenuOpen(false)} href="/#why-us" className={getMobileLinkClass("why-us")}>Neden Biz?</Link>
-                        <Link onClick={() => setMobileMenuOpen(false)} href="/#projects" className={getMobileLinkClass("projects")}>Projeler</Link>
-                        <Link onClick={() => setMobileMenuOpen(false)} href="/#testimonials" className={getMobileLinkClass("testimonials")}>Referanslar</Link>
-                        <Link onClick={() => setMobileMenuOpen(false)} href="/#contact" className={getMobileLinkClass("consult")}>İletişim</Link>
+                        <Link onClick={(e) => { setMobileMenuOpen(false); handleNavLinkClick(e, "/#why-us"); }} href="/#why-us" className={getMobileLinkClass("why-us")}>Neden Biz?</Link>
+                        <Link onClick={(e) => { setMobileMenuOpen(false); handleNavLinkClick(e, "/#projects"); }} href="/#projects" className={getMobileLinkClass("projects")}>Projeler</Link>
+                        <Link onClick={(e) => { setMobileMenuOpen(false); handleNavLinkClick(e, "/#testimonials"); }} href="/#testimonials" className={getMobileLinkClass("testimonials")}>Referanslar</Link>
+                        <Link onClick={(e) => { setMobileMenuOpen(false); handleNavLinkClick(e, "/#contact"); }} href="/#contact" className={getMobileLinkClass("consult")}>İletişim</Link>
                         <Link href="/consult" className="bg-primary-container text-white py-5 rounded-2xl font-bold text-center text-lg mt-4">Hemen Başlayın</Link>
                     </motion.div>
                 )}

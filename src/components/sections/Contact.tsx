@@ -55,8 +55,7 @@ export const Contact = () => {
                     <div className="space-y-8">
                         {[
                             { icon: "mail", title: "E-posta", content: "tun4klc@gmail.com" },
-                            { icon: "call", title: "Telefon", content: "+90 212 999 00 00" },
-                            { icon: "location_on", title: "Adres", content: "Levent Plaza, No: 123, Kat: 15\nBeşiktaş, İstanbul" },
+                            { icon: "call", title: "Telefon", content: "05431164604" },
                         ].map((item, index) => (
                             <div key={index} className="flex items-start gap-6 group">
                                 <div className="h-14 w-14 rounded-xl bg-[#1f1d34]/80 flex items-center justify-center text-primary-container shrink-0 border border-white/5 group-hover:scale-110 transition-transform shadow-lg">

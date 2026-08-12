@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kuranca — Gizlilik Politikası</title>
+<meta name="description" content="Kuranca uygulamasının hangi verileri topladığını, neden topladığını, nerede sakladığını ve nasıl sildiğini açıklayan gizlilik politikası.">
+<style>
+  :root {
+    --ground:      #FBF5E4;
+    --surface:     #FFFDF7;
+    --ink:         #16211F;
+    --ink-soft:    #55625F;
+    --ink-faint:   #8A9591;
+    --brand:       #0B3F39;
+    --accent:      #B8860B;
+    --rule:        #E4DAC2;
+    --rule-soft:   #EFE7D4;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground:    #0E1615;
+      --surface:   #141F1D;
+      --ink:       #E8E5DA;
+      --ink-soft:  #9AA6A2;
+      --ink-faint: #6C7975;
+      --brand:     #8FBFB4;
+      --accent:    #D3A93C;
+      --rule:      #24322F;
+      --rule-soft: #1C2826;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ground:    #0E1615;
+    --surface:   #141F1D;
+    --ink:       #E8E5DA;
+    --ink-soft:  #9AA6A2;
+    --ink-faint: #6C7975;
+    --brand:     #8FBFB4;
+    --accent:    #D3A93C;
+    --rule:      #24322F;
+    --rule-soft: #1C2826;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                 "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sayfa {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: clamp(2rem, 6vw, 4.5rem) clamp(1.25rem, 5vw, 2.5rem) 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.75rem;
+  }
+
+  /* ---- Künye ---- */
+
+  .kunye { display: flex; flex-direction: column; gap: 1.25rem; }
+
+  .eyebrow {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0;
+  }
+
+  h1 {
+    font-family: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino,
+                 Georgia, serif;
+    font-size: clamp(2rem, 6vw, 2.75rem);
+    line-height: 1.15;
+    font-weight: 600;
+    color: var(--brand);
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .ozet {
+    font-size: 1.0625rem;
+    color: var(--ink-soft);
+    margin: 0;
+    max-width: 34rem;
+  }
+
+  .kunye-tablo {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.4rem 1.5rem;
+    padding: 1.25rem 0 0;
+    border-top: 1px solid var(--rule);
+    font-size: 0.875rem;
+  }
+
+  .kunye-tablo dt {
+    color: var(--ink-faint);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .kunye-tablo dd { margin: 0; color: var(--ink-soft); }
+
+  /* ---- Bölümler ---- */
+
+  section { display: flex; flex-direction: column; gap: 0.875rem; }
+
+  h2 {
+    font-family: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino,
+                 Georgia, serif;
+    font-size: 1.375rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--brand);
+    margin: 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule-soft);
+    display: flex;
+    gap: 0.75rem;
+    text-wrap: balance;
+  }
+
+  h2 .no {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+    padding-top: 0.4rem;
+    flex: none;
+  }
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 0.75rem 0 0;
+  }
+
+  p { margin: 0; }
+
+  ul { margin: 0; padding-left: 1.15rem; display: flex; flex-direction: column; gap: 0.5rem; }
+
+  li::marker { color: var(--accent); }
+
+  strong { font-weight: 700; color: var(--ink); }
+
+  a {
+    color: var(--accent);
+    text-underline-offset: 0.18em;
+    text-decoration-thickness: 1px;
+  }
+
+  a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  code {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.8125em;
+    color: var(--ink-soft);
+    background: var(--rule-soft);
+    padding: 0.1em 0.35em;
+    border-radius: 3px;
+  }
+
+  /* ---- Veri envanteri ---- */
+
+  .tablo-sarmal {
+    overflow-x: auto;
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    background: var(--surface);
+    margin-top: 0.25rem;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 34rem;
+    font-size: 0.875rem;
+  }
+
+  thead th {
+    text-align: left;
+    font-size: 0.6875rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-weight: 700;
+    padding: 0.875rem 1rem;
+    border-bottom: 1px solid var(--rule);
+    white-space: nowrap;
+  }
+
+  tbody td {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid var(--rule-soft);
+    vertical-align: top;
+    color: var(--ink-soft);
+  }
+
+  tbody tr:last-child td { border-bottom: none; }
+
+  tbody td:first-child { color: var(--ink); font-weight: 600; }
+
+  tbody td code { background: none; padding: 0; display: block; margin-top: 0.2rem; }
+
+  /* ---- Vurgu kutusu ---- */
+
+  .kutu {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 10px 10px 0;
+    padding: 1.125rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  .kutu p { color: var(--ink-soft); font-size: 0.9375rem; }
+
+  /* ---- Alt bilgi ---- */
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    color: var(--ink-faint);
+    font-size: 0.8125rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+</style>
+</head>
+<body>
+<div class="sayfa">
+
+  <header class="kunye">
+    <p class="eyebrow">Kuranca</p>
+    <h1>Gizlilik Politikası</h1>
+    <p class="ozet">Bu metin, Kuranca uygulamasının hangi verilere dokunduğunu,
+    her birine neden ihtiyaç duyduğunu, nerede sakladığını ve nasıl sildiğini
+    anlatır. Kısa tutmaya değil, doğru olmaya çalıştık.</p>
+
+    <dl class="kunye-tablo">
+      <dt>Yürürlük</dt>
+      <dd>12 Ağustos 2026</dd>
+      <dt>Sürüm</dt>
+      <dd>1.0</dd>
+      <dt>Kapsam</dt>
+      <dd>Kuranca iOS ve Android uygulamaları</dd>
+      <dt>Veri sorumlusu</dt>
+      <dd>Virelix Yazılım · Gelibolu / Çanakkale, Türkiye</dd>
+      <dt>İletişim</dt>
+      <dd><a href="mailto:destek@virelixtr.com">destek@virelixtr.com</a></dd>
+    </dl>
+  </header>
+
+  <section>
+    <h2><span class="no">01</span>Özetle</h2>
+    <ul>
+      <li>Kuranca <strong>reklam göstermez</strong>, cihazının reklam kimliğini
+      okumaz ve seni uygulamalar ya da siteler arasında <strong>izlemez</strong>.</li>
+      <li>Verilerini <strong>satmıyoruz</strong> ve reklam amacıyla kimseyle
+      paylaşmıyoruz.</li>
+      <li>Uygulama içinde <strong>satın alınabilecek bir şey yok</strong>; ödeme
+      bilgine hiç dokunmuyoruz.</li>
+      <li>Topladığımız her şeyi, <strong>Ayarlar &gt; Hesabımı Sil</strong>
+      ile tek adımda kalıcı olarak sildirebilirsin.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="no">02</span>Topladığımız veriler</h2>
+    <p>Aşağıdaki tablo eksiksizdir: uygulamanın hesabına bağlı olarak sakladığı
+    alanların tamamı budur.</p>
+
+    <div class="tablo-sarmal">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Veri</th>
+            <th scope="col">Nerede durur</th>
+            <th scope="col">Neden</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>E-posta adresin</td>
+            <td>Firebase Authentication</td>
+            <td>Hesabını tanımak, giriş yapman ve şifreni sıfırlayabilmen için.</td>
+          </tr>
+          <tr>
+            <td>Ad ve soyad<code>name, surname</code></td>
+            <td>Cihazın ve Firestore</td>
+            <td>Uygulamada sana adınla hitap edebilmek için. İstersen boş bırakabilirsin.</td>
+          </tr>
+          <tr>
+            <td>Profil fotoğrafın<code>avatarBase64</code></td>
+            <td>Cihazın ve Firestore</td>
+            <td>Yalnızca sen eklersen. Cihaz değiştirdiğinde geri gelmesi için hesabınla birlikte yedeklenir.</td>
+          </tr>
+          <tr>
+            <td>Öğrenme ilerlemen<code>wordProgress, stats, completedUnits</code></td>
+            <td>Cihazın ve Firestore</td>
+            <td>Hangi kelimeyi ne kadar bildiğini hatırlamak, tekrar zamanını hesaplamak ve cihaz değiştirdiğinde kaldığın yerden devam ettirmek için.</td>
+          </tr>
+          <tr>
+            <td>Çalışma kaydın<code>studyLog, lessonLog</code></td>
+            <td>Cihazın ve Firestore</td>
+            <td>Günlük serini ve ders sayacını yürütmek için.</td>
+          </tr>
+          <tr>
+            <td>Günlük hedefin<code>dailyGoalMinutes</code></td>
+            <td>Cihazın ve Firestore</td>
+            <td>Kendine koyduğun günlük çalışma hedefini saklamak için.</td>
+          </tr>
+          <tr>
+            <td>Çökme kayıtları</td>
+            <td>Firebase Crashlytics</td>
+            <td>Uygulama beklenmedik biçimde kapanırsa cihaz modeli, işletim sistemi sürümü ve hatanın teknik dökümü bize iletilir.</td>
+          </tr>
+          <tr>
+            <td>Kullanım olayları</td>
+            <td>Firebase Analytics</td>
+            <td>Hangi ekranların açıldığı gibi genel kullanım bilgisi. Hangi bölümlerin işe yaradığını buradan görüyoruz.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Google veya Apple ile giriş yaptığında</h3>
+    <p>Hesabını bu yollardan biriyle açarsan, ilgili sağlayıcıdan yalnızca
+    <strong>e-posta adresini ve görünen adını</strong> alırız. Kişi listene,
+    takvimine, dosyalarına ya da başka hiçbir şeyine erişimimiz yoktur.
+    Apple ile girişte “E-postamı Gizle” seçeneğini kullanırsan, elimize gerçek
+    adresin değil Apple'ın ürettiği yönlendirme adresi geçer — bu da bizim için
+    yeterlidir.</p>
+
+    <h3>Fotoğraf kitaplığın</h3>
+    <p>Uygulama fotoğraf kitaplığına erişim iznini <strong>yalnızca sen profil
+    fotoğrafı seçmek istediğinde</strong> ister. Diğer fotoğraflarını okumaz,
+    taramaz ve hiçbirini bize göndermez.</p>
+  </section>
+
+  <section>
+    <h2><span class="no">03</span>Reklam, izleme ve ödeme</h2>
+    <div class="kutu">
+      <p>Kuranca <strong>reklam göstermez</strong>. Cihazının reklam kimliğini
+      (IDFA / Reklam Kimliği) okumaz, hiçbir reklam ağıyla veri paylaşmaz ve
+      seni uygulamalar arasında izlemez. Bu yüzden uygulama senden
+      <strong>izleme izni de istemez</strong>.</p>
+      <p>Uygulama içinde satın alınabilecek bir özellik, abonelik ya da ücretli
+      içerik <strong>yoktur</strong>. Kredi kartı, fatura veya ödeme bilgin
+      hiçbir aşamada bize ulaşmaz.</p>
+    </div>
+    <p>İleride bu durum değişir de reklam veya ücretli bir özellik eklenirse,
+    bu politika o değişiklik <strong>yayına alınmadan önce</strong> güncellenir
+    ve değişiklik uygulama içinden duyurulur.</p>
+  </section>
+
+  <section>
+    <h2><span class="no">04</span>Neden topluyoruz</h2>
+    <p>Yukarıdaki verilerin neredeyse tamamı tek bir amaca hizmet eder:
+    <strong>uygulamanın çalışması</strong>. İlerlemeni kaydetmek, telefonunu
+    kaybettiğinde geri yüklemek, tekrar zamanını doğru hesaplamak ve sana nasıl
+    hitap edeceğimizi bilmek için gerekiyorlar.</p>
+    <p>Çökme kayıtları hataları bulup düzeltmek, kullanım olayları ise hangi
+    bölümlerin gerçekten işe yaradığını anlamak içindir. Reklam hedefleme,
+    profil çıkarma veya otomatik karar verme amacıyla <strong>hiçbir veri
+    işlenmez</strong>.</p>
+    <p>Hukuki dayanağımız, hesap ve ilerleme verileri bakımından
+    <strong>sözleşmenin ifası</strong>; çökme ve kullanım kayıtları bakımından
+    ise uygulamayı ayakta tutmaya yönelik <strong>meşru menfaattir</strong>.</p>
+  </section>
+
+  <section>
+    <h2><span class="no">05</span>Nerede saklanıyor</h2>
+    <p>Hesabın ve öğrenme verilerin Google Firebase altyapısında,
+    <strong>Frankfurt (Almanya)</strong> bölgesinde tutulur. Çökme ve kullanım
+    kayıtları ise Google'ın küresel altyapısında işlenir; bu işleme Türkiye ve
+    Avrupa dışındaki sunucularda da gerçekleşebilir.</p>
+    <p>Veritabanı kuralları, <strong>her kullanıcının yalnızca kendi kaydına
+    erişebileceği</strong> biçimde yazılmıştır. Başka bir kullanıcının kaydını
+    okumak ya da değiştirmek teknik olarak mümkün değildir; bu kısıt
+    uygulamada değil, sunucu tarafında zorunlu tutulur.</p>
+    <p>Verilerin, <strong>sen hesabını silene kadar</strong> saklanır. Çökme ve
+    kullanım kayıtları, Google'ın belirlediği sınırlı saklama süresi sonunda
+    kendiliğinden silinir.</p>
+  </section>
+
+  <section>
+    <h2><span class="no">06</span>Üçüncü taraflar</h2>
+    <p>Verilerini kimseye <strong>satmıyoruz</strong>. Yalnızca aşağıdaki
+    hizmet sağlayıcıları, yalnızca kendi işlevlerini yerine getirebilmeleri
+    için gereken veriyle kullanıyoruz:</p>
+    <ul>
+      <li><strong>Google Firebase Authentication</strong> — kimlik doğrulama
+      (e-posta adresin ve görünen adın).</li>
+      <li><strong>Google Cloud Firestore</strong> — hesabına bağlı ilerleme ve
+      profil verilerinin saklanması.</li>
+      <li><strong>Google Firebase Crashlytics</strong> — çökme raporları.</li>
+      <li><strong>Google Firebase Analytics</strong> — genel kullanım
+      istatistikleri.</li>
+      <li><strong>Google Sign-In</strong> ve <strong>Apple ile Giriş Yap</strong>
+      — yalnızca bu yolları seçersen, yalnızca giriş anında.</li>
+    </ul>
+    <p>Bunların dışında hiçbir üçüncü tarafa veri göndermiyoruz. Yasal bir
+    zorunluluk doğması hâlinde yetkili mercilere yapılacak paylaşımlar bunun
+    dışındadır.</p>
+    <h3>Çökme kayıtları ve kimliğin</h3>
+    <p>Bir çökme raporunun hangi hesapta oluştuğunu bulabilmek için rapora
+    hesabının <strong>kimlik numarası (UID)</strong> eklenir. Adın ve e-posta
+    adresin bu kayıtlara <strong>işlenmez</strong>.</p>
+  </section>
+
+  <section>
+    <h2><span class="no">07</span>Güvenlik</h2>
+    <p>Uygulamayla sunucu arasındaki tüm trafik, işletim sisteminin sağladığı
+    <strong>HTTPS</strong> üzerinden şifrelenerek taşınır. Şifreni biz
+    görmeyiz: e-posta ile açılan hesaplarda şifre doğrudan Firebase
+    Authentication tarafından tutulur ve bize hiçbir aşamada iletilmez.</p>
+    <p>Hiçbir sistem yüzde yüz güvenli değildir; buna rağmen erişimi
+    yukarıdaki kurallarla en dar tutmaya ve toplamadığımız veriyi hiç
+    istememeye çalışıyoruz — en güvenli veri, hiç toplanmayan veridir.</p>
+  </section>
+
+  <section>
+    <h2><span class="no">08</span>Hakların</h2>
+    <p>Verilerine erişmeyi, düzeltilmesini, silinmesini ya da işlenmesine
+    itiraz etmeyi isteyebilirsin. Bunların çoğunu bize yazmana gerek kalmadan
+    uygulama içinden yapabilirsin:</p>
+    <ul>
+      <li><strong>Düzeltme:</strong> Ayarlar ekranından adını, soyadını, profil
+      fotoğrafını ve günlük hedefini istediğin zaman değiştirebilirsin.</li>
+      <li><strong>Silme:</strong> <strong>Ayarlar &gt; Hesabımı Sil</strong>.
+      Bu işlem buluttaki kaydını, cihazındaki ilerlemeni ve hesabını
+      <strong>geri döndürülemez</strong> biçimde kaldırır.</li>
+    </ul>
+    <p>Uygulamaya erişemiyorsan ya da başka bir talebin varsa
+    <a href="mailto:destek@virelixtr.com">destek@virelixtr.com</a> adresine
+    yazabilirsin; talebini en geç <strong>30 gün</strong> içinde
+    sonuçlandırırız.</p>
+  </section>
+
+  <section>
+    <h2><span class="no">09</span>Çocukların gizliliği</h2>
+    <p>Kuranca 13 yaşın altındaki çocuklara yönelik değildir ve onlardan
+    bilerek veri toplamaz. 13 yaşın altındaki bir çocuğa ait veri topladığımızı
+    fark edersek kaydı sileriz. Böyle bir durumu ebeveyn olarak fark edersen
+    bize yazman yeterlidir.</p>
+  </section>
+
+  <section>
+    <h2><span class="no">10</span>Değişiklikler</h2>
+    <p>Bu politika güncellenirse yukarıdaki <strong>yürürlük tarihi ve sürüm
+    numarası</strong> değişir. Topladığımız veriyi ya da kullanım amacını
+    genişleten bir değişiklikte, değişiklik yürürlüğe girmeden önce uygulama
+    içinden bilgilendirme yaparız.</p>
+  </section>
+
+  <footer>
+    <div>Sorular, veri erişim ve silme talepleri için:
+    <a href="mailto:destek@virelixtr.com">destek@virelixtr.com</a></div>
+    <div>Kuranca · Gizlilik Politikası sürüm 1.0 · 12 Ağustos 2026</div>
+  </footer>
+
+</div>
+</body>
+</html>

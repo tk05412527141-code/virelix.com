@@ -13,6 +13,12 @@
   --surface-container-highest: #34324b;
   --on-surface-variant: #ccc3d8;
   --outline: #958da1;
+
+  /* shadcn-uyumlu tokenlar (motion-footer bileşeni bunları kullanıyor) */
+  --border: #2a2740;
+  --muted: #1b1930;
+  --muted-foreground: #958da1;
+  --destructive: #ff6b81;
 }
 
 @theme inline {
@@ -27,7 +33,11 @@
   --color-surface-container-low: var(--surface-container-low);
   --color-surface-container-highest: var(--surface-container-highest);
   --color-on-surface-variant: var(--on-surface-variant);
-  
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-destructive: var(--destructive);
+
   --font-sans: 'Inter', sans-serif;
   --font-headline: 'Space Grotesk', sans-serif;
 }

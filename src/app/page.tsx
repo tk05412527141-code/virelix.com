@@ -7,7 +7,7 @@ import { Projects } from "@/components/sections/Projects";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { CTA } from "@/components/sections/CTA";
 import { Contact } from "@/components/sections/Contact";
-import { Footer } from "@/components/sections/Footer";
+import { CinematicFooter } from "@/components/ui/motion-footer";
 
 export default function Home() {
   return (
@@ -21,7 +21,7 @@ export default function Home() {
         <CTA />
         <Contact />
       </article>
-      <Footer />
+      <CinematicFooter />
     </main>
   );
 }
